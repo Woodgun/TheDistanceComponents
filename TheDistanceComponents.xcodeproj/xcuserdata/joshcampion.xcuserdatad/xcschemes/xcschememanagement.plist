@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TheDistanceComponents.xcscheme</key>
+		<key>TDCAppDependencies.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>TDCContentLoading.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +23,26 @@
 			<true/>
 		</dict>
 		<key>A5501A8E1CF35F7700022D04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5501ACD1CF361F100022D04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5501AD61CF361F100022D04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5501AE91CF361FD00022D04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5501AF21CF361FD00022D04</key>
 		<dict>
 			<key>primary</key>
 			<true/>

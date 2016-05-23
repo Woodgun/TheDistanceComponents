@@ -1,15 +1,15 @@
 //
-//  TheDistanceComponentsTests.swift
-//  TheDistanceComponentsTests
+//  TDCContentLoadingTests.swift
+//  TDCContentLoadingTests
 //
 //  Created by Josh Campion on 23/05/2016.
 //  Copyright © 2016 The Distance. All rights reserved.
 //
 
 import XCTest
-@testable import TheDistanceComponents
+@testable import TDCContentLoading
 
-class TheDistanceComponentsTests: XCTestCase {
+class TDCContentLoadingTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

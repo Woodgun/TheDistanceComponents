@@ -1,0 +1,100 @@
+//
+//  PagedContentLoadingViewModel.swift
+//  ComponentLibrary
+//
+//  Created by Josh Campion on 19/04/2016.
+//  Copyright © 2016 The Distance. All rights reserved.
+//
+
+import Foundation
+
+import ReactiveCocoa
+
+/// The `OutputType` for by a `PagingContentLoadingViewModel`. Contains all the content loaded so far and a flag for whether there is more content available. This has been extended to conform to `ListLoadingContainer` based on the currently loaded content.
+public struct PagedOutput<OutputType> {
+    
+    /// An aggregated array of all the content loaded so far.
+    public let currentContent:[OutputType]
+    
+    /// Flag for whether there are more pages to be loaded.
+    public let moreAvailable:Bool
+    
+    /// Default initialiser
+    public init(currentContent:[OutputType], moreAvailable:Bool) {
+        self.currentContent = currentContent
+        self.moreAvailable = moreAvailable
+    }
+}
+
+
+extension PagedOutput: ListLoadingContainer {
+    
+    /// The current content is used to populate a list.
+    public var listLoadingModel:[OutputType] {
+        return currentContent
+    }
+    
+}
+
+/**
+ Subclass of `ContentLoadingViewModel` for loading paged content. This class handles the aggregation of the loaded content allowing subclasses to provide only the content for a given page. The current page and whether there is more content available is handled automatically. 
+ 
+ `InputType` is a `Bool` indicating whether the next page of content should be fetched (`true`), or whether the currently loaded content should be cleared and the first page of content requested again (`false`).
+*/
+public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool, PagedOutput<ValueType>> {
+    
+    /// The number of objects that should be fetched per page. The default value is 25. Changing the value of this causes a refresh of the content as the current page number will be incorrect.
+    public let pageCount = MutableProperty<UInt>(25)
+    
+    /// Default initialiser passing the parameters through to `super`.
+    public override init(lifetimeTrigger: ViewLifetime? = .WillAppear, refreshFlattenStrategy: FlattenStrategy = .Latest) {
+        super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
+        
+        pageCount.producer.combinePrevious(25).filter { $0 != $1 }.startWithNext { _ in self.refreshObserver.sendNext(false) }
+    }
+    
+    /**
+     
+     Point of customisation for subclasses. The given page of content should be requested from an APIManager or other external source.
+     
+    */
+    public func contentForPage(page: UInt) -> SignalProducer<[ValueType], NSError> {
+        return SignalProducer.empty
+    }
+    
+    /**
+     
+     Aggregate the results of `contentForPage(_:)` that have been loaded so far.
+     
+     - parameter nextPage: Flag for whether the next page of content is being loaded (`true`) or the content is being loaded again from scratch (`false`).
+     
+    */
+    override public func loadingProducerWithInput(nextPage: Bool?) -> SignalProducer<PagedOutput<ValueType>, NSError> {
+        
+        let page:UInt
+        
+        let currentContent:PagedOutput<ValueType>
+        
+        if nextPage ?? false {
+            
+            let currentCount = loadedContent?.currentContent.count ?? 0
+            page = UInt(currentCount) / pageCount.value
+            currentContent = loadedContent ?? PagedOutput(currentContent:[ValueType](), moreAvailable:true)
+            
+        } else {
+            currentContent = PagedOutput(currentContent:[ValueType](), moreAvailable:true)
+            page = 0
+        }
+        
+        
+        return contentForPage(page)
+            .scan(currentContent) {
+                
+                let aggregatedContent = $0.currentContent + $1
+                let moreAvailable = UInt($1.count) == self.pageCount.value
+                
+                return PagedOutput(currentContent: aggregatedContent, moreAvailable: moreAvailable )
+        }
+    }
+    
+}
