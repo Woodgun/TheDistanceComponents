@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A54167461CF3A236002F4BA8 /* TestContentLoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54167451CF3A236002F4BA8 /* TestContentLoadingModel.swift */; };
+		A54167471CF3A264002F4BA8 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501B521CF3652700022D04 /* ReactiveCocoa.framework */; };
+		A54167481CF3A264002F4BA8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501B531CF3652700022D04 /* Result.framework */; };
+		A541674A1CF3A286002F4BA8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54167491CF3A286002F4BA8 /* Nimble.framework */; };
 		A5501AD81CF361F100022D04 /* TDCAppDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501ACE1CF361F100022D04 /* TDCAppDependencies.framework */; };
 		A5501ADD1CF361F100022D04 /* TDCAppDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501ADC1CF361F100022D04 /* TDCAppDependenciesTests.swift */; };
 		A5501AF41CF361FD00022D04 /* TDCContentLoading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501AEA1CF361FD00022D04 /* TDCContentLoading.framework */; };
@@ -52,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A54167451CF3A236002F4BA8 /* TestContentLoadingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContentLoadingModel.swift; sourceTree = "<group>"; };
+		A54167491CF3A286002F4BA8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		A5501ACE1CF361F100022D04 /* TDCAppDependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDCAppDependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5501AD01CF361F100022D04 /* TDCAppDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDCAppDependencies.h; sourceTree = "<group>"; };
 		A5501AD21CF361F100022D04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5501AF41CF361FD00022D04 /* TDCContentLoading.framework in Frameworks */,
+				A54167471CF3A264002F4BA8 /* ReactiveCocoa.framework in Frameworks */,
+				A54167481CF3A264002F4BA8 /* Result.framework in Frameworks */,
+				A541674A1CF3A286002F4BA8 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +190,7 @@
 		A5501AF71CF361FD00022D04 /* TDCContentLoadingTests */ = {
 			isa = PBXGroup;
 			children = (
+				A54167451CF3A236002F4BA8 /* TestContentLoadingModel.swift */,
 				A5501AF81CF361FD00022D04 /* TDCContentLoadingTests.swift */,
 				A5501AFA1CF361FD00022D04 /* Info.plist */,
 			);
@@ -234,6 +244,7 @@
 		A5501B561CF3652B00022D04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A54167491CF3A286002F4BA8 /* Nimble.framework */,
 				A5501B521CF3652700022D04 /* ReactiveCocoa.framework */,
 				A5501B531CF3652700022D04 /* Result.framework */,
 			);
@@ -323,6 +334,7 @@
 				A5501AEF1CF361FD00022D04 /* Sources */,
 				A5501AF01CF361FD00022D04 /* Frameworks */,
 				A5501AF11CF361FD00022D04 /* Resources */,
+				A541674B1CF3A7A2002F4BA8 /* Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,6 +421,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A541674B1CF3A7A2002F4BA8 /* Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			name = "Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5501AC91CF361F100022D04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -453,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54167461CF3A236002F4BA8 /* TestContentLoadingModel.swift in Sources */,
 				A5501AF91CF361FD00022D04 /* TDCContentLoadingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +703,10 @@
 		A5501AFF1CF361FD00022D04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TDCContentLoadingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCContentLoadingTests;
@@ -680,6 +717,10 @@
 		A5501B001CF361FD00022D04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TDCContentLoadingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCContentLoadingTests;
@@ -706,6 +747,7 @@
 				A5501AE11CF361F100022D04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5501AE21CF361F100022D04 /* Build configuration list for PBXNativeTarget "TDCAppDependenciesTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +756,7 @@
 				A5501AE41CF361F100022D04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5501AFB1CF361FD00022D04 /* Build configuration list for PBXNativeTarget "TDCContentLoading" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +765,7 @@
 				A5501AFD1CF361FD00022D04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5501AFE1CF361FD00022D04 /* Build configuration list for PBXNativeTarget "TDCContentLoadingTests" */ = {
 			isa = XCConfigurationList;
@@ -730,6 +774,7 @@
 				A5501B001CF361FD00022D04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

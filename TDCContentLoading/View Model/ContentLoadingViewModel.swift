@@ -30,6 +30,20 @@ public enum ContentLoadingState<ValueType> {
     
 }
 
+func ==<V:Equatable>(c1:ContentLoadingState<V>, c2:ContentLoadingState<V>) -> Bool {
+    
+    switch (c1, c2) {
+    case (.Unloaded, .Unloaded), (.Empty, .Empty), (.Loading, .Loading):
+        return true
+    case (.Success(let e1), .Success(let e2)):
+        return e1 == e2
+    case (.Error(let e1), .Error(let e2)):
+        return e1 == e2
+    default:
+        return false
+    }
+}
+
 /**
  
  Abstract class which defines the standard way of loading content. It defines standard properties and chains together refresh inputs. This can be used in conjunction with `ContentLoadingNode` and its subclasses to provide default UI set up and changes for each `ContentLoadingState`.
