@@ -28,8 +28,6 @@ public protocol ContentEquatable: Equatable {
  
  Structure for representing a change in content between two arrays. The arrays are required to have matching types which are `ContentComparable`, allowing the two arrays to be separated into `deletions`, `modifications` and `insertions`. This can then be used to animate content changes in a `UITableView` or `UICollectionView`.
  
- Elements to be used in a Changeset should therefore ensure `==` and `=~=` are implemented to provide the desired animations.
- 
  - note: This struct is based on that used by [Martin Richter](http://www.martinrichter.net) in his blog post ["Animating table row changes using changesets with MVVM"](http://www.martinrichter.net/blog/2015/12/30/animating-table-row-changes-using-changesets-with-mvvm/)
  
  */
@@ -80,50 +78,38 @@ public struct Changeset<Element: ContentEquatable> {
     }
 }
 
-/// Extension methods for an `Array` to be used in a `Changeset`.
-extension Array {
+/// A `Changeset` representing a list uses `newItems` to populate the list as an Array would.
+extension Changeset: ChangesetLoadingModel {
     
-    /**
-     
-     Convenience method to find the unique items in an array. This maintains the order of the items, whereas `Set` methods do not.
-     
-     - parameter otherArray: Array to perform the comparison on.
-     
-     - returns: An array of those elements which appear in `self`, but not `otherArray`.
-     */
-    func difference<T: Equatable>(otherArray: [T]) -> [T] {
-        var result = [T]()
-        
-        for e in self {
-            if let element = e as? T {
-                if !otherArray.contains(element) {
-                    result.append(element)
-                }
-            }
-        }
-        
-        return result
+    // MARK: ListLoadingModel
+    
+    /// `ListLoadingModel` conformance for `Changeset`. The `Element` contained in this `Changeset`.
+    public typealias ValueType = Element
+    
+    
+    /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
+    public func totalNumberOfEntities() -> Int {
+        return newItems.totalNumberOfEntities()
     }
     
-    /**
-     
-     Convenience method to find the common items between two arrays. This maintains the order of the items, whereas `Set` methods do not.
-     
-     - parameter otherArray: Array to perform the comparison on.
-     
-     - returns: An array of those elements which appear in `self`, but not `otherArray`.
-     */
-    func intersection<T: Equatable>(otherArray: [T]) -> [T] {
-        var result = [T]()
-        
-        for e in self {
-            if let element = e as? T {
-                if otherArray.contains(element) {
-                    result.append(element)
-                }
-            }
-        }
-        
-        return result
+    /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
+    public func numberOfSectionsInList() -> Int {
+        return newItems.numberOfSectionsInList()
+    }
+    
+    /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
+    public func numberOfEntitiesInSection(section:Int) -> Int {
+        return newItems.numberOfEntitiesInSection(section)
+    }
+    
+    /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
+    public func entityForIndexPath(indexPath:NSIndexPath) -> ValueType? {
+        return newItems.entityForIndexPath(indexPath)
+    }
+    
+    /// - returns: The `newItems` as this represents the current content of this change.
+    public func currentItems() -> [Element] {
+        return newItems
     }
 }
+

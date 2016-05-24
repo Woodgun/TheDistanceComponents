@@ -10,38 +10,12 @@ import Foundation
 
 import ReactiveCocoa
 
-/// The `OutputType` for by a `PagingContentLoadingViewModel`. Contains all the content loaded so far and a flag for whether there is more content available. This has been extended to conform to `ListLoadingContainer` based on the currently loaded content.
-public struct PagedOutput<OutputType> {
-    
-    /// An aggregated array of all the content loaded so far.
-    public let currentContent:[OutputType]
-    
-    /// Flag for whether there are more pages to be loaded.
-    public let moreAvailable:Bool
-    
-    /// Default initialiser
-    public init(currentContent:[OutputType], moreAvailable:Bool) {
-        self.currentContent = currentContent
-        self.moreAvailable = moreAvailable
-    }
-}
-
-
-extension PagedOutput: ListLoadingContainer {
-    
-    /// The current content is used to populate a list.
-    public var listLoadingModel:[OutputType] {
-        return currentContent
-    }
-    
-}
-
 /**
  Subclass of `ContentLoadingViewModel` for loading paged content. This class handles the aggregation of the loaded content allowing subclasses to provide only the content for a given page. The current page and whether there is more content available is handled automatically. 
  
  `InputType` is a `Bool` indicating whether the next page of content should be fetched (`true`), or whether the currently loaded content should be cleared and the first page of content requested again (`false`).
 */
-public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool, PagedOutput<ValueType>> {
+public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool, PagedOutput<ValueType>>, ChangesetLoadingModel {
     
     /// The number of objects that should be fetched per page. The default value is 25. Changing the value of this causes a refresh of the content as the current page number will be incorrect.
     public let pageCount = MutableProperty<UInt>(25)
@@ -96,5 +70,4 @@ public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool
                 return PagedOutput(currentContent: aggregatedContent, moreAvailable: moreAvailable )
         }
     }
-    
 }

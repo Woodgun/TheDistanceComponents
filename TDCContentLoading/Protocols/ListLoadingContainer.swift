@@ -42,6 +42,4 @@ public extension ListLoadingContainer {
     public func entityForIndexPath(indexPath: NSIndexPath) -> ModelType.ValueType? {
         return listLoadingModel.entityForIndexPath(indexPath)
     }
-    
-    
 }

@@ -10,40 +10,6 @@ import Foundation
 import ReactiveCocoa
 import Result
 
-/// Enum encompassing the possible states for a 'load' to be in.
-public enum ContentLoadingState<ValueType> {
-    
-    /// No fetch has been initiated yet.
-    case Unloaded
-    
-    /// Content has been requested successfully but nothing is found (such as no user favourites or an empty basket.
-    case Empty
-    
-    /// A network request is currently in progress.
-    case Loading
-    
-    /// A request has successfully completed with content.
-    case Success(ValueType)
-    
-    /// A request has failed with the given error.
-    case Error(NSError)
-    
-}
-
-func ==<V:Equatable>(c1:ContentLoadingState<V>, c2:ContentLoadingState<V>) -> Bool {
-    
-    switch (c1, c2) {
-    case (.Unloaded, .Unloaded), (.Empty, .Empty), (.Loading, .Loading):
-        return true
-    case (.Success(let e1), .Success(let e2)):
-        return e1 == e2
-    case (.Error(let e1), .Error(let e2)):
-        return e1 == e2
-    default:
-        return false
-    }
-}
-
 /**
  
  Abstract class which defines the standard way of loading content. It defines standard properties and chains together refresh inputs. This can be used in conjunction with `ContentLoadingNode` and its subclasses to provide default UI set up and changes for each `ContentLoadingState`.
@@ -200,23 +166,5 @@ public class ContentLoadingViewModel<InputType, OutputType> {
     */
     public func contentIsEmpty(value:OutputType) -> Bool {
         return false
-    }
-}
-
-/// Convenience subclass of `ContentLoadingViewModel` for `OutputType`s that conform to `ListLoadingModel`. This allows this class itself to conform to `ListLoadingModel`.
-public class ListLoadingViewModel<InputType, ListType:ListLoadingModel>: ContentLoadingViewModel<InputType, ListType> {
-    
-    public override init(lifetimeTrigger: ViewLifetime?, refreshFlattenStrategy: FlattenStrategy) {
-        super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
-    }
-    
-    /**
-     
-     Differentiate between the `.Empty` and `.Success(_)` cases for `ContentLoadingState`.
-     
-     - returns: `value.totalNumberOfEntities()` method is used to determine if the content is empty.
-     */
-    public override func contentIsEmpty(value:ListType) -> Bool {
-        return value.totalNumberOfEntities() == 0
     }
 }
