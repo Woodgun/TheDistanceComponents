@@ -116,6 +116,7 @@
 <li>[x] Standard StateModel &amp; ViewModel for handling network requests in MVVM</li>
 <li>[x] View Lifetime properties delivered using ReactiveCocoa</li>
 <li>[x] Standardised cases for List Loading including paging content</li>
+<li>[x] <a href="http://thedistance.github.io/TheDistanceComponents/TDCContentLoading/index.html">Documentation</a></li>
 </ul>
 <a href='#dependencies' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='dependencies'>Dependencies</h2>
 
@@ -124,48 +125,48 @@
 </ul>
 <a href='#getting-started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='getting-started'>Getting Started</h2>
 
-<p>TDCContentLoading is based around a ViewModel object: <a href=""><code>ContentLoadingViewModel</code></a>. The definition might appear convoluted at first glance, however asynchronous loading becomes very trivial if you just subclasses the necesseary methods:</p>
+<p><em>This set up was inspired by <a href="http://www.martinrichter.net/">Martin Richter&rsquo;s excellent blog series about MVVM in iOS using ReactiveCocoa</a></em></p>
+
+<p>TDCContentLoading is based around a ViewModel object: <a href="http://thedistance.github.io/TheDistanceComponents/TDCContentLoading/Classes/ContentLoadingViewModel.html"><code>ContentLoadingViewModel</code></a>. The definition might appear convoluted at first glance, however asynchronous loading becomes very trivial if you just subclasses the necesseary methods:</p>
 
 <ol>
 <li><p>Define the type of content you will be loading:</p>
-
-<p>class MyModel { &hellip; }</p></li>
+<pre class="highlight plaintext"><code>class MyModel { ... }
+</code></pre></li>
 <li><p>Create a subclass of <code>ContentLoadingViewModel</code> typed to your output and override <code>loadingProducerWithInput(_:)</code> to return a <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> SignalProducer that loads your content (<a href="https://github.com/joshc89/ReactiveCocoaConvenience">ReactiveCocoaConvenience</a> provides simple APIs for this):</p>
+<pre class="highlight plaintext"><code>class MyContentLoader : ContentLoadingViewModel&lt;Void, MyModel&gt; { 
 
-<p>class MyContentLoader : ContentLoadingViewModel<Void, MyModel> { </p>
-<pre class="highlight plaintext"><code>   func loadingProducerWithInput(input: Void?) -&gt; SignalProducer&lt;MyModel, NSError&gt; {
-       return Alamofire.Get("https://api.mysite/get/my/model")
-         .validate()
-         .rac_responseSwiftyJSONCreated()
-   }
-</code></pre>
-
-<p>}</p></li>
+    func loadingProducerWithInput(input: Void?) -&gt; SignalProducer&lt;MyModel, NSError&gt; {
+        return Alamofire.Get("https://api.mysite/get/my/model")
+            .validate()
+            .rac_responseSwiftyJSONCreated()
+    }
+}
+</code></pre></li>
 <li><p>Bind any UI properties in your <code>UIViewController</code> (or other View object) to the Output Properties of your <code>ContentLoadingViewModel</code>:</p>
+<pre class="highlight plaintext"><code>let viewModel = MyContentLoader()
 
-<p>let viewModel = MyContentLoader()</p>
+override func viewDidLoad(animated:Bool)  {
+    super.viewDidLoad(animated)
 
-<p>override func viewDidLoad(animated:Bool)  {
-       super.viewDidLoad(animated)</p>
-<pre class="highlight plaintext"><code>   errorLabel.rac_text &lt;~ viewModel.errorSignal.map { $0.localizedDescription }
-   loadingView.rac_hidden &lt;~ viewModel.isLoading.signal.map { !$0 }
+    errorLabel.rac_text &lt;~ viewModel.errorSignal.map { $0.localizedDescription }
+    loadingView.rac_hidden &lt;~ viewModel.isLoading.signal.map { !$0 }
 
-   viewModel.contentChangesSignal.observeNext { newValue in
+    viewModel.contentChangesSignal.observeNext { newValue in
        // Update the UI
        ...
-   }
-</code></pre>
-
-<p>}</p></li>
+    }
+}
+</code></pre></li>
 <li><p>Trigger loading by sending <code>.Next(_)</code> events:</p>
-
-<p>func buttonTapped() {
-       viewModel.refreshObsever.sendNext(_)
-   }</p></li>
+<pre class="highlight plaintext"><code>func buttonTapped() {
+    viewModel.refreshObsever.sendNext(_)
+}
+</code></pre></li>
 </ol>
 
-<p>For a simple ViewModel example see <a href=""><code>TDCContentLoadingTests.swift</code></a>.
-A consistent structure for UI based on <code>ContentLoadingViewModel</code> is coming soon. This set up was inspired by <a href="http://www.martinrichter.net/">Martin Richter&rsquo;s excellent blog series about MVVM in iOS using ReactiveCocoa</a>. An indepth look at how <code>ContentLoadingViewModel</code> works is given below.</p>
+<p>For a simple ViewModel example see <a href="https://github.com/thedistance/TheDistanceComponents/blob/master/TDCContentLoadingTests/TDCContentLoadingTests.swift">TDCContentLoadingTests.swift</a>.
+A consistent structure for UI based on <code>ContentLoadingViewModel</code> is coming soon. An indepth look at how <code>ContentLoadingViewModel</code> works is given below.</p>
 <a href='#lists-amp-paging' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='lists-amp-paging'>Lists &amp; Paging</h3>
 
 <p><em>More detail to come soon&hellip;</em></p>
@@ -175,7 +176,7 @@ A consistent structure for UI based on <code>ContentLoadingViewModel</code> is c
 <p>This component is for fetching and serialising content asynchronously and reporting the progress in a standard way. Rather than considering fetching data from a network, think instead of the entire process from user interaction to beginning the request, showing loading is ongoing, and reporting a successful serialized Model object or a failure. </p>
 <a href='#state-changes' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='state-changes'>State Changes</h4>
 
-<p>The loading process is represented by the <a href=""><code>ContentLoadingState</code></a> enum.</p>
+<p>The loading process is represented by the <a href="http://thedistance.github.io/TheDistanceComponents/TDCContentLoading/Enums/ContentLoadingState.html"><code>ContentLoadingState</code></a> enum.</p>
 <pre class="highlight plaintext"><code>public enum ContentLoadingState&lt;ValueType&gt; {
 
     /// No fetch has been initiated yet.
@@ -195,7 +196,7 @@ A consistent structure for UI based on <code>ContentLoadingViewModel</code> is c
 }
 </code></pre>
 
-<p>The <a href=""><code>ContentLoadingViewModel</code></a> is the ViewModel object used to manage asynchronous loading, typically started as a result of user interaction in a View. It sends <code>ContentLoadingState</code> updates through <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> signals on the <code>state</code> property. If elements of the View are only interested in a single state, they can observe the individual properties:</p>
+<p>The <code>ContentLoadingViewModel</code> is the ViewModel object used to manage asynchronous loading, typically started as a result of user interaction in a View. It sends <code>ContentLoadingState</code> updates through <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> signals on the <code>state</code> property. If elements of the View are only interested in a single state, they can observe the individual properties:</p>
 
 <ul>
 <li><code>isLoading</code></li>
@@ -203,11 +204,18 @@ A consistent structure for UI based on <code>ContentLoadingViewModel</code> is c
 <li><code>errorSignal</code></li>
 </ul>
 
+<p>The state changes as in the following diagram:</p>
+
+<p><img src="https://raw.githubusercontent.com/thedistance/TheDistanceComponents/gh-pages/Images/ContentLoadingFlow.svg" alt="State Flow">)
+<em>ContentLoadingState is represented in **bold</em><em>. Arrows represent events sent from a Signal or SignalProdcer.</em></p>
+
+<hr>
+
 <p>The request is triggered by sending an event to the <code>refreshObserver</code> which starts the SignalProducer returned from <code>loadingProducerWithInput(_:)</code>, which subclasses should override. This sets:</p>
 
 <ul>
-<li><code>isLoading -&gt; true</code></li>
 <li><code>state -&gt; .Loading</code></li>
+<li><code>isLoading -&gt; true</code></li>
 </ul>
 
 <p>The SignalProducer returned from <code>loadingProducerWithInput(_:)</code> could initiate a network request (<a href="https://github.com/joshc89/ReactiveCocoaConvenience">ReactiveCocoaConvenience</a> provides simple APIs for this) or other form of loading.</p>
@@ -215,26 +223,26 @@ A consistent structure for UI based on <code>ContentLoadingViewModel</code> is c
 <p>If that SignalProducer fails, the error is sent through the <code>errorSignal</code> property on the <code>ContentLoadingViewModel</code> and</p>
 
 <ul>
-<li><code>isLoading -&gt; false</code></li>
 <li><code>state -&gt; .Error(_)</code></li>
+<li><code>isLoading -&gt; false</code></li>
 </ul>
 
-<p>The networking error as is the state&rsquo;s associated value.</p>
+<p>The networking error is the state&rsquo;s associated value.</p>
 
 <p>If the request succeeds, the new value is sent through the <code>contentChangesSignal</code>. The result is tested for being &lsquo;empty&rsquo; using <code>contentIsEmpty(_:)</code>, which subclasses should override. The <code>.Empty</code> state is explicitly defined as UI will often differ to show the user that there is nothing there, rather than a blank list with no context.</p>
 
 <p>If <code>contentIsEmpty(_:) == true</code>:</p>
 
 <ul>
-<li><code>isLoading -&gt; false</code></li>
 <li><code>state -&gt; .Empty</code></li>
+<li><code>isLoading -&gt; false</code></li>
 </ul>
 
 <p>else </p>
 
 <ul>
-<li><code>isLoading -&gt; false</code></li>
 <li><code>state -&gt; .Success(_)</code></li>
+<li><code>isLoading -&gt; false</code></li>
 </ul>
 
 <p>The associated value of the <code>.Success(_)</code> state is the associated value of the <code>.Next(_)</code> event of the <code>SignalProducer</code> from returned from <code>loadingProducerWithInput(_:)</code>.</p>
