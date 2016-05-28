@@ -9,6 +9,7 @@ This is a sub-framework of a [TheDistanceComponents].  There are more sub-framew
 * [x] Standard StateModel & ViewModel for handling network requests in MVVM
 * [x] View Lifetime properties delivered using ReactiveCocoa
 * [x] Standardised cases for List Loading including paging content
+* [x] [Documentation](http://thedistance.github.io/TheDistanceComponents/TDCContentLoading/index.html)
 
 ## Dependencies
 
@@ -20,40 +21,40 @@ TDCContentLoading is based around a ViewModel object: [`ContentLoadingViewModel`
 
 0. Define the type of content you will be loading:
 	
-	   class MyModel { ... }
+		class MyModel { ... }
 
 0. Create a subclass of `ContentLoadingViewModel` typed to your output and override `loadingProducerWithInput(_:)` to return a [ReactiveCocoa] SignalProducer that loads your content ([ReactiveCocoaConvenience] provides simple APIs for this):
 
-	   class MyContentLoader : ContentLoadingViewModel<Void, MyModel> { 
+		class MyContentLoader : ContentLoadingViewModel<Void, MyModel> { 
 
-	       func loadingProducerWithInput(input: Void?) -> SignalProducer<MyModel, NSError> {
-	   	       return Alamofire.Get("https://api.mysite/get/my/model")
-	   	         .validate()
-	   	         .rac_responseSwiftyJSONCreated()
-	       }
-	   }
+			func loadingProducerWithInput(input: Void?) -> SignalProducer<MyModel, NSError> {
+				return Alamofire.Get("https://api.mysite/get/my/model")
+					.validate()
+					.rac_responseSwiftyJSONCreated()
+				}
+			}
 	   
 0. Bind any UI properties in your `UIViewController` (or other View object) to the Output Properties of your `ContentLoadingViewModel`:
 	
-	   let viewModel = MyContentLoader()
+		let viewModel = MyContentLoader()
 	   
-	   override func viewDidLoad(animated:Bool)  {
-	       super.viewDidLoad(animated)
+		override func viewDidLoad(animated:Bool)  {
+			super.viewDidLoad(animated)
 	   
-	       errorLabel.rac_text <~ viewModel.errorSignal.map { $0.localizedDescription }
-    	   loadingView.rac_hidden <~ viewModel.isLoading.signal.map { !$0 }
+			errorLabel.rac_text <~ viewModel.errorSignal.map { $0.localizedDescription }
+			loadingView.rac_hidden <~ viewModel.isLoading.signal.map { !$0 }
 	     
-	       viewModel.contentChangesSignal.observeNext { newValue in
+			viewModel.contentChangesSignal.observeNext { newValue in
 	           // Update the UI
 	           ...
-	       }
-	   }
+			}
+		}
 
 0. Trigger loading by sending `.Next(_)` events:
 
-	   func buttonTapped() {
-	   	   viewModel.refreshObsever.sendNext(_)
-	   }
+		func buttonTapped() {
+			viewModel.refreshObsever.sendNext(_)
+		}
 	
    
 For a simple ViewModel example see [`TDCContentLoadingTests.swift`]().

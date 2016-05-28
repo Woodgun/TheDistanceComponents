@@ -34,7 +34,7 @@ ReactiveCocoaConvenience is [Carthage] compatible. Add
 
 and following the [Carthage] installation instructions. Add the frameworks you will be using and their dependencies, then checkout the Documentation for each to get started.
 
-As there is no official [Cocoapods] support for ReactiveCocoa, Cocoapods is not officially supported for ReactiveCocoaConvenience either.
+As there is no official [Cocoapods] support for ReactiveCocoa, Cocoapods is not officially supported for TheDistanceComponents either.
 
 ## MVVM & Components: A Brief Introduction
 
@@ -88,6 +88,7 @@ If you have any queries / suggestions we'd love you to get in touch.
 - If you **want to contribute**, submit a pull request.
 - If you'd like to **ask a general question**, email us on <hello+thedistancecomponents@thedistance.co.uk>.
 
+[Viper]: https://www.objc.io/issues/13-architecture/viper/
 
 [TDCAppDependencies]: ReadMe-TDCAppDependencies.md
 [TDCContentLoading]: ReadMe-TDCContentLoading.md
