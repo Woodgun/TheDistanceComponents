@@ -100,31 +100,39 @@ The `ContentLoadingViewModel` is the ViewModel object used to manage asynchronou
 * `contentChangesSignal`
 * `errorSignal`
 
+The state changes as in the following diagram:
+
+![State Flow](http://thedistance.github.io/TheDistanceComponents/Images/ContentLoadingFlow.svg)
+
+*ContentLoadingState is represented in **bold**. Arrows represent events sent from a Signal or SignalProdcer.*
+
+---
+
 The request is triggered by sending an event to the `refreshObserver` which starts the SignalProducer returned from `loadingProducerWithInput(_:)`, which subclasses should override. This sets:
 
-* `isLoading -> true`
 * `state -> .Loading`
+* `isLoading -> true`
 
 The SignalProducer returned from `loadingProducerWithInput(_:)` could initiate a network request ([ReactiveCocoaConvenience] provides simple APIs for this) or other form of loading.
 
 If that SignalProducer fails, the error is sent through the `errorSignal` property on the `ContentLoadingViewModel` and
 
-* `isLoading -> false`
 * `state -> .Error(_)`
+* `isLoading -> false`
 
-The networking error as is the state's associated value.
+The networking error is the state's associated value.
 
 If the request succeeds, the new value is sent through the `contentChangesSignal`. The result is tested for being 'empty' using `contentIsEmpty(_:)`, which subclasses should override. The `.Empty` state is explicitly defined as UI will often differ to show the user that there is nothing there, rather than a blank list with no context.
 
 If `contentIsEmpty(_:) == true`:
 
-* `isLoading -> false`
 * `state -> .Empty`
+* `isLoading -> false`
 
 else 
 
-* `isLoading -> false`
 * `state -> .Success(_)`
+* `isLoading -> false`
 
 The associated value of the `.Success(_)` state is the associated value of the `.Next(_)` event of the `SignalProducer` from returned from `loadingProducerWithInput(_:)`.
 
