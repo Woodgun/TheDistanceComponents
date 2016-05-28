@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ContentLoadingViewModel Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ContentLoadingViewModel" class="dashAnchor"></a>
+    <a title="ContentLoadingViewModel Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TDCContentLoading Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/thedistance/TheDistanceComponents"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TDCContentLoading Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ContentLoadingViewModel Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContentLoadingViewModel.html">ContentLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ListLoadingViewModel.html">ListLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PagingContentLoadingViewModel.html">PagingContentLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReactiveAppearanceViewController.html">ReactiveAppearanceViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ContentLoadingState.html">ContentLoadingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ViewLifetime.html">ViewLifetime</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ChangesetLoadingModel.html">ChangesetLoadingModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContentEquatable.html">ContentEquatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ListLoadingContainer.html">ListLoadingContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Changeset.html">Changeset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PagedOutput.html">PagedOutput</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:E17TDCContentLoadingSa9ValueType">ValueType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ContentLoadingViewModel</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ContentLoadingViewModel</span><span class="o">&lt;</span><span class="kt">InputType</span><span class="p">,</span> <span class="kt">OutputType</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Abstract class which defines the standard way of loading content. It defines standard properties and chains together refresh inputs. This can be used in conjunction with <code>ContentLoadingNode</code> and its subclasses to provide default UI set up and changes for each <code><a href="../Enums/ContentLoadingState.html">ContentLoadingState</a></code>.</p>
+
+<p>There are two generic parameters:</p>
+
+<p><li><code>InputType</code>: This represents a transient value that the loading request may depend on, such as in Paged Content.</li>
+<li><p><code>OutputType</code>: This should be the type of content that is being loading, typically a model object.</p></li>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code>ContentLoadingNode</code></p></p>
+
+<p></div>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code>TableLoadingNode</code></p></p>
+
+<p></div>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code>CollectionLoadingNode</code></p></p>
+
+<p></div></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Input"></a>
+                <a name="//apple_ref/swift/Section/Input" class="dashAnchor"></a>
+                <a href="#/Input">
+                  <h3 class="section-name">Input</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel12viewLifetimeGC13ReactiveCocoa15MutablePropertyOS_12ViewLifetime_"></a>
+                    <a name="//apple_ref/swift/Property/viewLifetime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel12viewLifetimeGC13ReactiveCocoa15MutablePropertyOS_12ViewLifetime_">viewLifetime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property for the lifetime of the View this ViewModel is providing data for. This can be useful for triggering and cancelling refreshes on view lifetime events. This can be bound to the <code>lifetimeSignal</code> property of a <code><a href="../Classes/ReactiveAppearanceViewController.html">ReactiveAppearanceViewController</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">viewLifetime</span> <span class="o">=</span> <span class="kt">MutableProperty</span><span class="o">&lt;</span><span class="kt">ViewLifetime</span><span class="o">&gt;</span><span class="p">(</span><span class="o">.</span><span class="kt">Init</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel15refreshObserverGV13ReactiveCocoa8ObserverGSqx_O6Result7NoError_"></a>
+                    <a name="//apple_ref/swift/Property/refreshObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel15refreshObserverGV13ReactiveCocoa8ObserverGSqx_O6Result7NoError_">refreshObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Triggers a content refresh through the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel13refreshSignalGV13ReactiveCocoa14SignalProducerGSqx_O6Result7NoError_">refreshSignal</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">refreshObserver</span><span class="p">:</span> <span class="kt">Observer</span><span class="o">&lt;</span><span class="kt">InputType</span><span class="p">?,</span> <span class="kt">NoError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Output"></a>
+                <a name="//apple_ref/swift/Section/Output" class="dashAnchor"></a>
+                <a href="#/Output">
+                  <h3 class="section-name">Output</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel9isLoadingGC13ReactiveCocoa15MutablePropertySb_"></a>
+                    <a name="//apple_ref/swift/Property/isLoading" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel9isLoadingGC13ReactiveCocoa15MutablePropertySb_">isLoading</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property to indicate that content is being fetched. This can be observed externally to show this progress to the user but <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel5stateGC13ReactiveCocoa15MutablePropertyGOS_19ContentLoadingStateq___">state</a></code> is the recommended property to observe.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">isLoading</span> <span class="o">=</span> <span class="kt">MutableProperty</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel20contentChangesSignalGC13ReactiveCocoa6Signalq_O6Result7NoError_"></a>
+                    <a name="//apple_ref/swift/Property/contentChangesSignal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel20contentChangesSignalGC13ReactiveCocoa6Signalq_O6Result7NoError_">contentChangesSignal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The output for the fetched content. This can be observed externally to update the View  but <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel5stateGC13ReactiveCocoa15MutablePropertyGOS_19ContentLoadingStateq___">state</a></code> is the recommended property to observe.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">contentChangesSignal</span><span class="p">:</span> <span class="kt">Signal</span><span class="o">&lt;</span><span class="kt">OutputType</span><span class="p">,</span> <span class="kt">NoError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel11errorSignalGC13ReactiveCocoa6SignalCSo7NSErrorO6Result7NoError_"></a>
+                    <a name="//apple_ref/swift/Property/errorSignal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel11errorSignalGC13ReactiveCocoa6SignalCSo7NSErrorO6Result7NoError_">errorSignal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property a View or other observer of this ViewModel can receive errors with. Errors should be sent internally using the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel13errorObserverGV13ReactiveCocoa8ObserverCSo7NSErrorO6Result7NoError_">errorObserver</a></code>. <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel5stateGC13ReactiveCocoa15MutablePropertyGOS_19ContentLoadingStateq___">state</a></code> is the recommended property to observe for updating the UI.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">errorSignal</span><span class="p">:</span> <span class="kt">Signal</span><span class="o">&lt;</span><span class="kt">NSError</span><span class="p">,</span> <span class="kt">NoError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel5stateGC13ReactiveCocoa15MutablePropertyGOS_19ContentLoadingStateq___"></a>
+                    <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel5stateGC13ReactiveCocoa15MutablePropertyGOS_19ContentLoadingStateq___">state</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property a View or other observer can recieve condensed updates between about the current loading process. This is a combination of <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel9isLoadingGC13ReactiveCocoa15MutablePropertySb_">isLoading</a></code>, <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel20contentChangesSignalGC13ReactiveCocoa6Signalq_O6Result7NoError_">contentChangesSignal</a></code>, <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel11errorSignalGC13ReactiveCocoa6SignalCSo7NSErrorO6Result7NoError_">errorSignal</a></code> and <code><a href="../Classes/ContentLoadingViewModel.html#/s:FC17TDCContentLoading23ContentLoadingViewModel14contentIsEmptyFq_Sb">contentIsEmpty(_:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">state</span> <span class="o">=</span> <span class="kt">MutableProperty</span><span class="o">&lt;</span><span class="kt">ContentLoadingState</span><span class="o">&lt;</span><span class="kt">OutputType</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="o">.</span><span class="kt">Unloaded</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Workings"></a>
+                <a name="//apple_ref/swift/Section/Workings" class="dashAnchor"></a>
+                <a href="#/Workings">
+                  <h3 class="section-name">Workings</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel22contentChangesObserverGV13ReactiveCocoa8Observerq_O6Result7NoError_"></a>
+                    <a name="//apple_ref/swift/Property/contentChangesObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel22contentChangesObserverGV13ReactiveCocoa8Observerq_O6Result7NoError_">contentChangesObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Internal property to send the results of loading to the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel20contentChangesSignalGC13ReactiveCocoa6Signalq_O6Result7NoError_">contentChangesSignal</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">contentChangesObserver</span><span class="p">:</span> <span class="kt">Observer</span><span class="o">&lt;</span><span class="kt">OutputType</span><span class="p">,</span> <span class="kt">NoError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel13errorObserverGV13ReactiveCocoa8ObserverCSo7NSErrorO6Result7NoError_"></a>
+                    <a name="//apple_ref/swift/Property/errorObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel13errorObserverGV13ReactiveCocoa8ObserverCSo7NSErrorO6Result7NoError_">errorObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Internal property to send error messages to the View through the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel11errorSignalGC13ReactiveCocoa6SignalCSo7NSErrorO6Result7NoError_">errorSignal</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">errorObserver</span><span class="p">:</span> <span class="kt">Observer</span><span class="o">&lt;</span><span class="kt">NSError</span><span class="p">,</span> <span class="kt">NoError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel13refreshSignalGV13ReactiveCocoa14SignalProducerGSqx_O6Result7NoError_"></a>
+                    <a name="//apple_ref/swift/Property/refreshSignal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel13refreshSignalGV13ReactiveCocoa14SignalProducerGSqx_O6Result7NoError_">refreshSignal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Responds to the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel15refreshObserverGV13ReactiveCocoa8ObserverGSqx_O6Result7NoError_">refreshObserver</a></code>, chaining to a new <code><a href="../Classes/ContentLoadingViewModel.html#/s:FC17TDCContentLoading23ContentLoadingViewModel24loadingProducerWithInputFGSqx_GV13ReactiveCocoa14SignalProducerq_CSo7NSError_">loadingProducerWithInput(_:)</a></code>. <code>Next</code> events are forwarded to the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel20contentChangesSignalGC13ReactiveCocoa6Signalq_O6Result7NoError_">contentChangesSignal</a></code> whilst errors are flattened out and forwarded to the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel11errorSignalGC13ReactiveCocoa6SignalCSo7NSErrorO6Result7NoError_">errorSignal</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">refreshSignal</span><span class="p">:</span> <span class="kt">SignalProducer</span><span class="o">&lt;</span><span class="kt">InputType</span><span class="p">?,</span> <span class="kt">NoError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17TDCContentLoading23ContentLoadingViewModel13loadedContentGSqq__"></a>
+                    <a name="//apple_ref/swift/Property/loadedContent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17TDCContentLoading23ContentLoadingViewModel13loadedContentGSqq__">loadedContent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Assigned on <code>.Next</code> events of the <code>loadingProducerWithInput()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">loadedContent</span><span class="p">:</span><span class="kt">OutputType</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17TDCContentLoading23ContentLoadingViewModelcFT15lifetimeTriggerGSqOS_12ViewLifetime_22refreshFlattenStrategyO13ReactiveCocoa15FlattenStrategy_GS0_xq__"></a>
+                    <a name="//apple_ref/swift/Method/init(lifetimeTrigger:refreshFlattenStrategy:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17TDCContentLoading23ContentLoadingViewModelcFT15lifetimeTriggerGSqOS_12ViewLifetime_22refreshFlattenStrategyO13ReactiveCocoa15FlattenStrategy_GS0_xq__">init(lifetimeTrigger:refreshFlattenStrategy:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises all properties and chains the refresh, loading, contentChanges, and error signals together. Observers the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel12viewLifetimeGC13ReactiveCocoa15MutablePropertyOS_12ViewLifetime_">viewLifetime</a></code> to chain to the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel15refreshObserverGV13ReactiveCocoa8ObserverGSqx_O6Result7NoError_">refreshObserver</a></code>. All the above are merge to create the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel5stateGC13ReactiveCocoa15MutablePropertyGOS_19ContentLoadingStateq___">state</a></code> property which can be use to update UI.</p>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code>ContentLoadingNode</code>.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">lifetimeTrigger</span><span class="p">:</span><span class="kt">ViewLifetime</span><span class="p">?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">WillAppear</span><span class="p">,</span> <span class="nv">refreshFlattenStrategy</span><span class="p">:</span><span class="kt">FlattenStrategy</span> <span class="o">=</span> <span class="o">.</span><span class="kt">Latest</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Content%20Loading"></a>
+                <a name="//apple_ref/swift/Section/Content Loading" class="dashAnchor"></a>
+                <a href="#/Content%20Loading">
+                  <h3 class="section-name">Content Loading</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17TDCContentLoading23ContentLoadingViewModel24loadingProducerWithInputFGSqx_GV13ReactiveCocoa14SignalProducerq_CSo7NSError_"></a>
+                    <a name="//apple_ref/swift/Method/loadingProducerWithInput(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17TDCContentLoading23ContentLoadingViewModel24loadingProducerWithInputFGSqx_GV13ReactiveCocoa14SignalProducerq_CSo7NSError_">loadingProducerWithInput(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Trigged by the <code><a href="../Classes/ContentLoadingViewModel.html#/s:vC17TDCContentLoading23ContentLoadingViewModel13refreshSignalGV13ReactiveCocoa14SignalProducerGSqx_O6Result7NoError_">refreshSignal</a></code>, subclasses should overide this to load the content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">loadingProducerWithInput</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span><span class="kt">InputType</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">SignalProducer</span><span class="o">&lt;</span><span class="kt">OutputType</span><span class="p">,</span> <span class="kt">NSError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17TDCContentLoading23ContentLoadingViewModel14contentIsEmptyFq_Sb"></a>
+                    <a name="//apple_ref/swift/Method/contentIsEmpty(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17TDCContentLoading23ContentLoadingViewModel14contentIsEmptyFq_Sb">contentIsEmpty(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Function used to differentiate the between the <code>.Empty</code> and <code>.Success(_)</code> cases for <code><a href="../Enums/ContentLoadingState.html">ContentLoadingState</a></code>.</p>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code><a href="../Classes/ListLoadingViewModel.html">ListLoadingViewModel</a></code></p>
+
+</div>
+
+<p><code>true</code> if the content is deemed empty, false otherwise. If the out out is a <code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code> the <code>totalNumberOfEntities()</code> method is used to determine if the content is empty.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">contentIsEmpty</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span><span class="kt">OutputType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>false</code> by default. Subclasses can override this to provide further logic.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://thedistance.co.uk" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-05-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

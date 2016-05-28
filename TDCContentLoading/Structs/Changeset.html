@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changeset Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Changeset" class="dashAnchor"></a>
+    <a title="Changeset Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TDCContentLoading Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/thedistance/TheDistanceComponents"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TDCContentLoading Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Changeset Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContentLoadingViewModel.html">ContentLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ListLoadingViewModel.html">ListLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PagingContentLoadingViewModel.html">PagingContentLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReactiveAppearanceViewController.html">ReactiveAppearanceViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ContentLoadingState.html">ContentLoadingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ViewLifetime.html">ViewLifetime</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ChangesetLoadingModel.html">ChangesetLoadingModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContentEquatable.html">ContentEquatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ListLoadingContainer.html">ListLoadingContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Changeset.html">Changeset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PagedOutput.html">PagedOutput</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:E17TDCContentLoadingSa9ValueType">ValueType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Changeset</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Changeset</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">:</span> <span class="kt">ContentEquatable</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Structure for representing a change in content between two arrays. The arrays are required to have matching types which are <code>ContentComparable</code>, allowing the two arrays to be separated into <code>deletions</code>, <code>modifications</code> and <code>insertions</code>. This can then be used to animate content changes in a <code>UITableView</code> or <code>UICollectionView</code>.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This struct is based on that used by <a href="http://www.martinrichter.net">Martin Richter</a> in his blog post <a href="http://www.martinrichter.net/blog/2015/12/30/animating-table-row-changes-using-changesets-with-mvvm/"><q>Animating table row changes using changesets with MVVM</q></a>
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17TDCContentLoading9Changeset9deletionsGSaCSo11NSIndexPath_"></a>
+                    <a name="//apple_ref/swift/Property/deletions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17TDCContentLoading9Changeset9deletionsGSaCSo11NSIndexPath_">deletions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Index Paths for the items in <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8oldItemsGSax_">oldItems</a></code> that are no longer in <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code>. Inclusion is determined by <code>Equatable</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">deletions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSIndexPath</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17TDCContentLoading9Changeset13modificationsGSaCSo11NSIndexPath_"></a>
+                    <a name="//apple_ref/swift/Property/modifications" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17TDCContentLoading9Changeset13modificationsGSaCSo11NSIndexPath_">modifications</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Index Paths for the items in both <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8oldItemsGSax_">oldItems</a></code> and <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code>. Inclusion is determined by <code>Equatable</code>. Modification is determined by <code><a href="../Protocols/ContentEquatable.html">ContentEquatable</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">modifications</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSIndexPath</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17TDCContentLoading9Changeset10insertionsGSaCSo11NSIndexPath_"></a>
+                    <a name="//apple_ref/swift/Property/insertions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17TDCContentLoading9Changeset10insertionsGSaCSo11NSIndexPath_">insertions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Index Paths for the items in <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> that were not in <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8oldItemsGSax_">oldItems</a></code>. Inclusion is determined by <code>Equatable</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">insertions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSIndexPath</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17TDCContentLoading9Changeset8oldItemsGSax_"></a>
+                    <a name="//apple_ref/swift/Property/oldItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17TDCContentLoading9Changeset8oldItemsGSax_">oldItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The initial array to perform comparison of <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> to.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">oldItems</span><span class="p">:[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17TDCContentLoading9Changeset8newItemsGSax_"></a>
+                    <a name="//apple_ref/swift/Property/newItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The final array to perform comparison of <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8oldItemsGSax_">oldItems</a></code> against.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">newItems</span><span class="p">:[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17TDCContentLoading9ChangesetcFT8oldItemsGSax_8newItemsGSax__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(oldItems:newItems:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17TDCContentLoading9ChangesetcFT8oldItemsGSax_8newItemsGSax__GS0_x_">init(oldItems:newItems:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Defualt initialiser that calculates all properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">oldItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">],</span> <span class="nv">newItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ListLoadingModel"></a>
+                <a name="//apple_ref/swift/Section/ListLoadingModel" class="dashAnchor"></a>
+                <a href="#/ListLoadingModel">
+                  <h3 class="section-name">ListLoadingModel</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17TDCContentLoading9Changeset21totalNumberOfEntitiesFT_Si"></a>
+                    <a name="//apple_ref/swift/Method/totalNumberOfEntities()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17TDCContentLoading9Changeset21totalNumberOfEntitiesFT_Si">totalNumberOfEntities()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code> conformance using <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> as an Array conforming to <code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">totalNumberOfEntities</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17TDCContentLoading9Changeset22numberOfSectionsInListFT_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSectionsInList()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17TDCContentLoading9Changeset22numberOfSectionsInListFT_Si">numberOfSectionsInList()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code> conformance using <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> as an Array conforming to <code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfSectionsInList</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17TDCContentLoading9Changeset25numberOfEntitiesInSectionFSiSi"></a>
+                    <a name="//apple_ref/swift/Method/numberOfEntitiesInSection(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17TDCContentLoading9Changeset25numberOfEntitiesInSectionFSiSi">numberOfEntitiesInSection(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code> conformance using <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> as an Array conforming to <code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfEntitiesInSection</span><span class="p">(</span><span class="nv">section</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17TDCContentLoading9Changeset18entityForIndexPathFCSo11NSIndexPathGSqx_"></a>
+                    <a name="//apple_ref/swift/Method/entityForIndexPath(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17TDCContentLoading9Changeset18entityForIndexPathFCSo11NSIndexPathGSqx_">entityForIndexPath(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code> conformance using <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> as an Array conforming to <code><a href="../Protocols/ListLoadingModel.html">ListLoadingModel</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">entityForIndexPath</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span><span class="kt">NSIndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ValueType</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17TDCContentLoading9Changeset12currentItemsFT_GSax_"></a>
+                    <a name="//apple_ref/swift/Method/currentItems()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17TDCContentLoading9Changeset12currentItemsFT_GSax_">currentItems()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">currentItems</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <code><a href="../Structs/Changeset.html#/s:vV17TDCContentLoading9Changeset8newItemsGSax_">newItems</a></code> as this represents the current content of this change.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://thedistance.co.uk" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-05-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AnalyticsReporter Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/AnalyticsReporter" class="dashAnchor"></a>
+    <a title="AnalyticsReporter Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TDCAppDependencies Docs</a> (94% documented)</p>
+        <p class="header-right"><a href="https://github.com/thedistance/TheDistanceComponents"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TDCAppDependencies Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AnalyticsReporter Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDependencies.html">AppDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestAnalyticsReporter.html">TestAnalyticsReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestCrashReporter.html">TestCrashReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestPreferences.html">TestPreferences</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18TDCAppDependencies28EnableAnalyticsPreferenceKeySS">EnableAnalyticsPreferenceKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18TDCAppDependencies33EnableCrashReportingPreferenceKeySS">EnableCrashReportingPreferenceKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF18TDCAppDependenciesoi2eeFTVS_13AnalyticEventS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AnalyticSession.html">AnalyticSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AnalyticsReporter.html">AnalyticsReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CrashReporter.html">CrashReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreferencesInteractor.html">PreferencesInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewLoader.html">ViewLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/_AppDependencies.html">_AppDependencies</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AnalyticEvent.html">AnalyticEvent</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AnalyticsReporter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AnalyticsReporter</span></code></pre>
+
+                </div>
+              </div>
+            <p>Defines the requirements of an object that sends Analytics.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP18TDCAppDependencies17AnalyticsReporter15enableAnalyticsFSbT_"></a>
+                    <a name="//apple_ref/swift/Method/enableAnalytics(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP18TDCAppDependencies17AnalyticsReporter15enableAnalyticsFSbT_">enableAnalytics(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should enable / disable further analytics from be sent.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">enableAnalytics</span><span class="p">(</span><span class="nv">enable</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP18TDCAppDependencies17AnalyticsReporter14setupAnalyticsFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/setupAnalytics()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP18TDCAppDependencies17AnalyticsReporter14setupAnalyticsFT_T_">setupAnalytics()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should be called before any other analytics methods to set the default properties, such as tracking ids.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setupAnalytics</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP18TDCAppDependencies17AnalyticsReporter12sendAnalyticFTVS_13AnalyticEvent12asNewSessionGSqPS_15AnalyticSession___T_"></a>
+                    <a name="//apple_ref/swift/Method/sendAnalytic(_:asNewSession:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP18TDCAppDependencies17AnalyticsReporter12sendAnalyticFTVS_13AnalyticEvent12asNewSessionGSqPS_15AnalyticSession___T_">sendAnalytic(_:asNewSession:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should record the given analytic event, optionally starting a new session.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">sendAnalytic</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span><span class="kt">AnalyticEvent</span><span class="p">,</span> <span class="k">as</span><span class="kt">NewSession</span> <span class="nv">session</span><span class="p">:</span><span class="kt">AnalyticSession</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The event to send.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>session</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If this value is not nil, this should begin a new analytics session with the given configuration, closing a previously opened session. This should be called whenever anyhting in the session configuration changes, e.g. user logs out / in.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP18TDCAppDependencies17AnalyticsReporter12sendAnalyticFVS_13AnalyticEventT_"></a>
+                    <a name="//apple_ref/swift/Method/sendAnalytic(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP18TDCAppDependencies17AnalyticsReporter12sendAnalyticFVS_13AnalyticEventT_">sendAnalytic(_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should record the given analytic event. A default implementation is given which calls <code><a href="../Protocols/AnalyticsReporter.html#/s:FP18TDCAppDependencies17AnalyticsReporter12sendAnalyticFTVS_13AnalyticEvent12asNewSessionGSqPS_15AnalyticSession___T_">sendAnalytic(_:asNewSession:)</a></code> without starting a new session.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Calls <code>sendAnalytic(_:asNewSession:)</code> without starting a new session.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">sendAnalytic</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span><span class="kt">AnalyticEvent</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The event to send.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://thedistance.co.uk" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-05-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

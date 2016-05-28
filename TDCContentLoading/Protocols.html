@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Protocols  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Protocols  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">TDCContentLoading Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/thedistance/TheDistanceComponents"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">TDCContentLoading Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Protocols  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ContentLoadingViewModel.html">ContentLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ListLoadingViewModel.html">ListLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PagingContentLoadingViewModel.html">PagingContentLoadingViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ReactiveAppearanceViewController.html">ReactiveAppearanceViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/ContentLoadingState.html">ContentLoadingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ViewLifetime.html">ViewLifetime</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ChangesetLoadingModel.html">ChangesetLoadingModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ContentEquatable.html">ContentEquatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ListLoadingContainer.html">ListLoadingContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ListLoadingModel.html">ListLoadingModel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Changeset.html">Changeset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PagedOutput.html">PagedOutput</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:E17TDCContentLoadingSa9ValueType">ValueType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Protocols</h1>
+            <p>The following protocols are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P17TDCContentLoading16ContentEquatable"></a>
+                    <a name="//apple_ref/swift/Protocol/ContentEquatable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P17TDCContentLoading16ContentEquatable">ContentEquatable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Protocol used with <code><a href="Structs/Changeset.html">Changeset</a></code>s to determine items which may be equal in terms of the object they represent but have different content. This is useful for objects which may change, e.g. products with a new price, calendar appointments with a new time.</p>
+
+                        <a href="Protocols/ContentEquatable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContentEquatable</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P17TDCContentLoading20ListLoadingContainer"></a>
+                    <a name="//apple_ref/swift/Protocol/ListLoadingContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P17TDCContentLoading20ListLoadingContainer">ListLoadingContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Protocol extending <code><a href="Protocols/ListLoadingModel.html">ListLoadingModel</a></code> making adoption of <code><a href="Protocols/ListLoadingModel.html">ListLoadingModel</a></code> easier for objects that have properties that already conform to <code><a href="Protocols/ListLoadingModel.html">ListLoadingModel</a></code> such as Arrays. Default implementations are given for each method in <code><a href="Protocols/ListLoadingModel.html">ListLoadingModel</a></code> using a public extension.</p>
+
+                        <a href="Protocols/ListLoadingContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ListLoadingContainer</span><span class="p">:</span><span class="kt">ListLoadingModel</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P17TDCContentLoading16ListLoadingModel"></a>
+                    <a name="//apple_ref/swift/Protocol/ListLoadingModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P17TDCContentLoading16ListLoadingModel">ListLoadingModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Protocol defining a type that can represent a list.</p>
+
+<p>Extensions for conformance are given for</p>
+
+<ul>
+<li><code><a href="Extensions/Array.html">Array</a></code></li>
+<li><code><a href="Structs/Changeset.html">Changeset</a></code></li>
+<li><code><a href="Classes/ListLoadingViewModel.html">ListLoadingViewModel</a></code></li>
+<li><code><a href="Structs/PagedOutput.html">PagedOutput</a></code></li>
+</ul>
+
+                        <a href="Protocols/ListLoadingModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ListLoadingModel</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P17TDCContentLoading21ChangesetLoadingModel"></a>
+                    <a name="//apple_ref/swift/Protocol/ChangesetLoadingModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P17TDCContentLoading21ChangesetLoadingModel">ChangesetLoadingModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extension of the <code><a href="Protocols/ListLoadingModel.html">ListLoadingModel</a></code> from which a <code><a href="Structs/Changeset.html">Changeset</a></code> can be created.</p>
+
+                        <a href="Protocols/ChangesetLoadingModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ChangesetLoadingModel</span><span class="p">:</span> <span class="kt">ListLoadingModel</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://thedistance.co.uk" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-05-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

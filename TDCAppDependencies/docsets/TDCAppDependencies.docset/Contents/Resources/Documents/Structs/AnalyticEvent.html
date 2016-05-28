@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AnalyticEvent Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/AnalyticEvent" class="dashAnchor"></a>
+    <a title="AnalyticEvent Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TDCAppDependencies Docs</a> (94% documented)</p>
+        <p class="header-right"><a href="https://github.com/thedistance/TheDistanceComponents"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TDCAppDependencies Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AnalyticEvent Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDependencies.html">AppDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestAnalyticsReporter.html">TestAnalyticsReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestCrashReporter.html">TestCrashReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestPreferences.html">TestPreferences</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18TDCAppDependencies28EnableAnalyticsPreferenceKeySS">EnableAnalyticsPreferenceKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18TDCAppDependencies33EnableCrashReportingPreferenceKeySS">EnableCrashReportingPreferenceKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF18TDCAppDependenciesoi2eeFTVS_13AnalyticEventS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AnalyticSession.html">AnalyticSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AnalyticsReporter.html">AnalyticsReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CrashReporter.html">CrashReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreferencesInteractor.html">PreferencesInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewLoader.html">ViewLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/_AppDependencies.html">_AppDependencies</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AnalyticEvent.html">AnalyticEvent</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AnalyticEvent</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnalyticEvent</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Simple struct to define an Analytic Event. This is a value type to ensure clear mutabililty implications.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV18TDCAppDependencies13AnalyticEvent8categorySS"></a>
+                    <a name="//apple_ref/swift/Property/category" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV18TDCAppDependencies13AnalyticEvent8categorySS">category</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The category for this event. This should be high level for filtering the events. This is defined as an enum for String safety.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">category</span><span class="p">:</span><span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV18TDCAppDependencies13AnalyticEvent6actionSS"></a>
+                    <a name="//apple_ref/swift/Property/action" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV18TDCAppDependencies13AnalyticEvent6actionSS">action</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The action for this event. This should be mid level for filtering the events within a given category. This is defined as an enum for String safety.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">action</span><span class="p">:</span><span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV18TDCAppDependencies13AnalyticEvent5labelGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/label" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV18TDCAppDependencies13AnalyticEvent5labelGSqSS_">label</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The label for this event. This should be low level identifying a specific event.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">label</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV18TDCAppDependencies13AnalyticEvent8userInfoGVs10DictionarySSP__"></a>
+                    <a name="//apple_ref/swift/Property/userInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV18TDCAppDependencies13AnalyticEvent8userInfoGVs10DictionarySSP__">userInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extra info specifc to this analytic event.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">userInfo</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV18TDCAppDependencies13AnalyticEventcFT8categorySS6actionSS5labelGSqSS_8userInfoGSqGVs10DictionarySSP____S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(category:action:label:userInfo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV18TDCAppDependencies13AnalyticEventcFT8categorySS6actionSS5labelGSqSS_8userInfoGSqGVs10DictionarySSP____S0_">init(category:action:label:userInfo:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated initialiser for a general event. 
+It is <strong>strongly recommended</strong> that event Category, Actions and Lables are defined using enums and this struct is extended with a convenience initialiser specific to the application being developed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">category</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">label</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">userInfo</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>category</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The category for this event.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The action for this event.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>label</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The label for this event.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Extra info specifc to this event.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV18TDCAppDependencies13AnalyticEvent7addInfoFTSS5valueP__T_"></a>
+                    <a name="//apple_ref/swift/Method/addInfo(_:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV18TDCAppDependencies13AnalyticEvent7addInfoFTSS5valueP__T_">addInfo(_:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Appends a new value to the userInfo.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">addInfo</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span><span class="kt">Any</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key to which the value will be assigned.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value to be stored.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV18TDCAppDependencies13AnalyticEvent11setUserInfoFGVs10DictionarySSP__T_"></a>
+                    <a name="//apple_ref/swift/Method/setUserInfo(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV18TDCAppDependencies13AnalyticEvent11setUserInfoFGVs10DictionarySSP__T_">setUserInfo(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Assigns a new userInfo dictionary to this event.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">setUserInfo</span><span class="p">(</span><span class="nv">info</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>info</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The info to be set.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV18TDCAppDependencies13AnalyticEvent11descriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV18TDCAppDependencies13AnalyticEvent11descriptionSS">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>CustomStringConvertible</code> variable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span><span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://thedistance.co.uk" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-05-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

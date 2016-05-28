@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>_AppDependencies Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/_AppDependencies" class="dashAnchor"></a>
+    <a title="_AppDependencies Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TDCAppDependencies Docs</a> (94% documented)</p>
+        <p class="header-right"><a href="https://github.com/thedistance/TheDistanceComponents"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TDCAppDependencies Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        _AppDependencies Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDependencies.html">AppDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestAnalyticsReporter.html">TestAnalyticsReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestCrashReporter.html">TestCrashReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TestPreferences.html">TestPreferences</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18TDCAppDependencies28EnableAnalyticsPreferenceKeySS">EnableAnalyticsPreferenceKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v18TDCAppDependencies33EnableCrashReportingPreferenceKeySS">EnableCrashReportingPreferenceKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF18TDCAppDependenciesoi2eeFTVS_13AnalyticEventS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AnalyticSession.html">AnalyticSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AnalyticsReporter.html">AnalyticsReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CrashReporter.html">CrashReporter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PreferencesInteractor.html">PreferencesInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewLoader.html">ViewLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/_AppDependencies.html">_AppDependencies</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AnalyticEvent.html">AnalyticEvent</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>_AppDependencies</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="n">_AppDependencies</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol that <code><a href="../Classes/AppDependencies.html">AppDependencies</a></code> subclasses should conform to prescribing standard method implementations.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFP18TDCAppDependencies16_AppDependencies18sharedDependenciesFT_x"></a>
+                    <a name="//apple_ref/swift/Method/sharedDependencies()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP18TDCAppDependencies16_AppDependencies18sharedDependenciesFT_x">sharedDependencies()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The singleton representing the global <code><a href="../Classes/AppDependencies.html">AppDependencies</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">sharedDependencies</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP18TDCAppDependencies16_AppDependencies13crashReporterGSqPS_13CrashReporter__"></a>
+                    <a name="//apple_ref/swift/Property/crashReporter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP18TDCAppDependencies16_AppDependencies13crashReporterGSqPS_13CrashReporter__">crashReporter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles crash and error reporting. The setter for this should call <code>setUpCrashReporting()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">crashReporter</span><span class="p">:</span><span class="kt">CrashReporter</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP18TDCAppDependencies16_AppDependencies17analyticsReporterGSqPS_17AnalyticsReporter__"></a>
+                    <a name="//apple_ref/swift/Property/analyticsReporter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP18TDCAppDependencies16_AppDependencies17analyticsReporterGSqPS_17AnalyticsReporter__">analyticsReporter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles tracking analytics. The setter for this should call <code>setupAnalytics()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">analyticsReporter</span><span class="p">:</span><span class="kt">AnalyticsReporter</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP18TDCAppDependencies16_AppDependencies21preferencesInteractorGSqPS_21PreferencesInteractor__"></a>
+                    <a name="//apple_ref/swift/Property/preferencesInteractor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP18TDCAppDependencies16_AppDependencies21preferencesInteractorGSqPS_21PreferencesInteractor__">preferencesInteractor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles the user&rsquo;s preferences. The setter for this should calls <code>setDefaultPreferences()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">preferencesInteractor</span><span class="p">:</span><span class="kt">PreferencesInteractor</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP18TDCAppDependencies16_AppDependencies10viewLoaderGSqPS_10ViewLoader__"></a>
+                    <a name="//apple_ref/swift/Property/viewLoader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP18TDCAppDependencies16_AppDependencies10viewLoaderGSqPS_10ViewLoader__">viewLoader</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles view and view model creation for navigation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">viewLoader</span><span class="p">:</span><span class="kt">ViewLoader</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP18TDCAppDependencies16_AppDependencies35installRootViewControllerIntoWindowFCSo8UIWindowT_"></a>
+                    <a name="//apple_ref/swift/Method/installRootViewControllerIntoWindow(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP18TDCAppDependencies16_AppDependencies35installRootViewControllerIntoWindowFCSo8UIWindowT_">installRootViewControllerIntoWindow(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should be called by the AppDelegate to create a <code>UIViewController</code> to be root and add it as the root of the given window.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">installRootViewControllerIntoWindow</span><span class="p">(</span><span class="nv">window</span><span class="p">:</span><span class="kt">UIWindow</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>window</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The window to add the root <code>UIViewController</code> to.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://thedistance.co.uk" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-05-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
