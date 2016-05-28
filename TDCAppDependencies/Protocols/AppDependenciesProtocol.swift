@@ -12,7 +12,7 @@ public protocol _AppDependencies {
     /// The singleton representing the global `AppDependencies`.
     static func sharedDependencies() -> Self
     
-    /// The Viper Interactor that handles crash reporting. The setter for this should call `setUpCrashReporting()`.
+    /// Handles crash and error reporting. The setter for this should call `setUpCrashReporting()`.
     var crashReporter:CrashReporter? { get set }
     
     /// Handles tracking analytics. The setter for this should call `setupAnalytics()`.

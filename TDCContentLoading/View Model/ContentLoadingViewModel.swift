@@ -14,6 +14,11 @@ import Result
  
  Abstract class which defines the standard way of loading content. It defines standard properties and chains together refresh inputs. This can be used in conjunction with `ContentLoadingNode` and its subclasses to provide default UI set up and changes for each `ContentLoadingState`.
  
+ There are two generic parameters:
+ 
+ * `InputType`: This represents a transient value that the loading request may depend on, such as in Paged Content.
+ * `OutputType`: This should be the type of content that is being loading, typically a model object.
+ 
  - seealso: `ContentLoadingNode`
  - seealso: `TableLoadingNode`
  - seealso: `CollectionLoadingNode`

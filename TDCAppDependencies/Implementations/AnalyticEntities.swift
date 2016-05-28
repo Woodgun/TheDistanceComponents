@@ -1,6 +1,5 @@
 //
 //  AnalyticEntities.swift
-//  ViperKit
 //
 //  Copyright © 2016 The Distance. All rights reserved.
 //
