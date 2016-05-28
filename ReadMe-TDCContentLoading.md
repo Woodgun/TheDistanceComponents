@@ -17,7 +17,9 @@ This is a sub-framework of a [TheDistanceComponents].  There are more sub-framew
 
 ## Getting Started
 
-TDCContentLoading is based around a ViewModel object: [`ContentLoadingViewModel`](). The definition might appear convoluted at first glance, however asynchronous loading becomes very trivial if you just subclasses the necesseary methods:
+*This set up was inspired by [Martin Richter's excellent blog series about MVVM in iOS using ReactiveCocoa](http://www.martinrichter.net/)*
+
+TDCContentLoading is based around a ViewModel object: [`ContentLoadingViewModel`](http://thedistance.github.io/TheDistanceComponents/TDCContentLoading/Classes/ContentLoadingViewModel.html). The definition might appear convoluted at first glance, however asynchronous loading becomes very trivial if you just subclasses the necesseary methods:
 
 0. Define the type of content you will be loading:
 	
@@ -31,8 +33,8 @@ TDCContentLoading is based around a ViewModel object: [`ContentLoadingViewModel`
 				return Alamofire.Get("https://api.mysite/get/my/model")
 					.validate()
 					.rac_responseSwiftyJSONCreated()
-				}
 			}
+		}
 	   
 0. Bind any UI properties in your `UIViewController` (or other View object) to the Output Properties of your `ContentLoadingViewModel`:
 	
@@ -57,8 +59,8 @@ TDCContentLoading is based around a ViewModel object: [`ContentLoadingViewModel`
 		}
 	
    
-For a simple ViewModel example see [`TDCContentLoadingTests.swift`]().
-A consistent structure for UI based on `ContentLoadingViewModel` is coming soon. This set up was inspired by [Martin Richter's excellent blog series about MVVM in iOS using ReactiveCocoa](http://www.martinrichter.net/). An indepth look at how `ContentLoadingViewModel` works is given below.
+For a simple ViewModel example see [TDCContentLoadingTests.swift](https://github.com/thedistance/TheDistanceComponents/blob/master/TDCContentLoadingTests/TDCContentLoadingTests.swift).
+A consistent structure for UI based on `ContentLoadingViewModel` is coming soon. An indepth look at how `ContentLoadingViewModel` works is given below.
 
 ### Lists & Paging
 
@@ -72,7 +74,7 @@ This component is for fetching and serialising content asynchronously and report
 
 #### State Changes
 
-The loading process is represented by the [`ContentLoadingState`]() enum.
+The loading process is represented by the [`ContentLoadingState`](http://thedistance.github.io/TheDistanceComponents/TDCContentLoading/Enums/ContentLoadingState.html) enum.
 
 	public enum ContentLoadingState<ValueType> {
     
@@ -92,7 +94,7 @@ The loading process is represented by the [`ContentLoadingState`]() enum.
     	case Error(NSError)
 	}
 
-The [`ContentLoadingViewModel`]() is the ViewModel object used to manage asynchronous loading, typically started as a result of user interaction in a View. It sends `ContentLoadingState` updates through [ReactiveCocoa] signals on the `state` property. If elements of the View are only interested in a single state, they can observe the individual properties:
+The `ContentLoadingViewModel` is the ViewModel object used to manage asynchronous loading, typically started as a result of user interaction in a View. It sends `ContentLoadingState` updates through [ReactiveCocoa] signals on the `state` property. If elements of the View are only interested in a single state, they can observe the individual properties:
 
 * `isLoading`
 * `contentChangesSignal`

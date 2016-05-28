@@ -9,11 +9,13 @@ This project had two key goals:
 0. Increased reusability of code to reduce boilerplate and development time whilst increasing stability and consistency.
 1. Increased testability of code whilst reducing the amount of boilerplate tests to be written and maintained.
 
-The direction taken to acheive these goal is to create base implementations of default functionality, called Components, that can be reused and customised throughout multiple apps. The 'Model-View-ViewModel' (MVVM) architecture and [ReactiveCocoa], described in detail in here and throughout the code, is was determined to be the best fit for this as it is more flexible and testable that MVC, and less verbose and opaque than [Viper]. To reduce the dependencies on projects using TheDistanceComponents, a piece of
+The direction taken to acheive these goal is to create base implementations of default functionality, called Components, that can be reused and customised throughout multiple apps. The 'Model-View-ViewModel' (MVVM) architecture and [ReactiveCocoa], described in detail in here and throughout the code, is was determined to be the best fit for this as it is more flexible and testable that MVC, and less verbose and opaque than [Viper]. 
 
 This project will typically contain few `UIViewController`s, with the emphasis on creating reusable ViewModel components. Reusable UI is created using [AsyncDisplayKit] an excellent library for creating UI, and `ASDisplayNode`s will be used to provide customisable building blocks of UI.
 
 ## Components
+
+To reduce the dependencies on projects using TheDistanceComponents, each piece of functionality has been separated into its own framework.
 
 * [TDCAppDependencies]: 
   * Singleton and related classes to achieve a standardised MVVM architecture
@@ -32,7 +34,7 @@ ReactiveCocoaConvenience is [Carthage] compatible. Add
 
 	github "thedistance/TheDistanceComponents"
 
-and following the [Carthage] installation instructions. Add the frameworks you will be using and their dependencies, then checkout the Documentation for each to get started.
+and following the [Carthage] installation instructions. Add the frameworks you will be using and their dependencies, then checkout the documentation for each to get started.
 
 As there is no official [Cocoapods] support for ReactiveCocoa, Cocoapods is not officially supported for TheDistanceComponents either.
 
