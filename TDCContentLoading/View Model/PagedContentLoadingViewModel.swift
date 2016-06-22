@@ -70,4 +70,11 @@ public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool
                 return PagedOutput(currentContent: aggregatedContent, moreAvailable: moreAvailable )
         }
     }
+    
+    // MARK: Changeset Loading Model
+    
+    /// - returns: The currently loaded content from the `PagedOutput` or and empty array if nothing has been downloaded.
+    public func currentItems() -> [ValueType] {
+        return loadedContent?.currentContent ?? []
+    }
 }
