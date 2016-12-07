@@ -35,11 +35,11 @@ public extension ListLoadingContainer {
     
     /// - returns: `numberOfEntitiesInSection(_:)` for the contained `ListLoadingModel`.
     public func numberOfEntitiesInSection(section: Int) -> Int {
-        return listLoadingModel.numberOfEntitiesInSection(section)
+        return listLoadingModel.numberOfEntitiesInSection(section: section)
     }
     
     /// - returns: `entityForIndexPath(_:)` as given by the contained `ListLoadingModel`.
     public func entityForIndexPath(indexPath: NSIndexPath) -> ModelType.ValueType? {
-        return listLoadingModel.entityForIndexPath(indexPath)
+        return listLoadingModel.entityForIndexPath(indexPath: indexPath)
     }
 }

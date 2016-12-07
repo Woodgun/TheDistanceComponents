@@ -1,0 +1,35 @@
+# Master Pods Repo
+source 'https://github.com/CocoaPods/Specs.git'
+
+# pod configuration
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+
+# define
+workspace 'TheDistanceComponents'
+project 'TheDistanceComponents'
+
+# define groups of pods
+
+def core_pods
+	pod 'Nimble'
+	pod 'ReactiveSwift', '~> 1.0.0-alpha.4'
+end
+
+
+# set pods for each target
+
+target 'TDCAppDependencies' do
+
+    core_pods
+    
+end
+
+target 'TDCContentLoading' do
+
+    core_pods
+    
+end
+
+

@@ -10,10 +10,10 @@ import Foundation
 final public class TestCrashReporter: CrashReporter {
     
     /// Internal variable for saving the log messages.
-    public private(set) var messages = [String]()
+    public fileprivate(set) var messages = [String]()
     
     /// Internal variable for saving non-fatal errors.
-    public private(set) var nonFatals = [NSError]()
+    public fileprivate(set) var nonFatals = [NSError]()
     
     /// Resets `messages` and `nonFatals` to empty arrays. This can be called on `setup()` for any testing classes.
     public func setupCrashReporting() {
@@ -22,7 +22,7 @@ final public class TestCrashReporter: CrashReporter {
     }
     
     /// Appends `message` to the `messages` array.
-    public func logToCrashReport(message: String) {
+    public func logToCrashReport(_ message: String) {
         messages.append(message)
     }
     
@@ -32,7 +32,7 @@ final public class TestCrashReporter: CrashReporter {
     }
     
     /// Appends `error` to the `nonFatals` array.
-    public func logNonFatalError(error: NSError) {
+    public func logNonFatalError(_ error: NSError) {
         nonFatals.append(error)
     }
     

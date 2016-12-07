@@ -8,7 +8,7 @@
 
 import Foundation
 
-import ReactiveCocoa
+import ReactiveSwift
 
 /**
  Subclass of `ContentLoadingViewModel` for loading paged content. This class handles the aggregation of the loaded content allowing subclasses to provide only the content for a given page. The current page and whether there is more content available is handled automatically. 
@@ -21,10 +21,10 @@ public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool
     public let pageCount = MutableProperty<UInt>(25)
     
     /// Default initialiser passing the parameters through to `super`.
-    public override init(lifetimeTrigger: ViewLifetime? = .WillAppear, refreshFlattenStrategy: FlattenStrategy = .Latest) {
+    public override init(lifetimeTrigger: ViewLifetime? = .WillAppear, refreshFlattenStrategy: FlattenStrategy = .latest) {
         super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
         
-        pageCount.producer.combinePrevious(25).filter { $0 != $1 }.startWithNext { _ in self.refreshObserver.sendNext(false) }
+        pageCount.producer.combinePrevious(25).filter { $0 != $1 }.startWithValues { _ in self.refreshObserver.send(value: false) }
     }
     
     /**
@@ -43,7 +43,7 @@ public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool
      - parameter nextPage: Flag for whether the next page of content is being loaded (`true`) or the content is being loaded again from scratch (`false`).
      
     */
-    override public func loadingProducerWithInput(nextPage: Bool?) -> SignalProducer<PagedOutput<ValueType>, NSError> {
+    override public func loadingProducerWithInput(input nextPage: Bool?) -> SignalProducer<PagedOutput<ValueType>, NSError> {
         
         let page:UInt
         
@@ -61,7 +61,7 @@ public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool
         }
         
         
-        return contentForPage(page)
+        return contentForPage(page: page)
             .scan(currentContent) {
                 
                 let aggregatedContent = $0.currentContent + $1

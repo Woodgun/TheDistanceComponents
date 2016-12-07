@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import Result
 
 /**
@@ -58,7 +58,7 @@ public class ContentLoadingViewModel<InputType, OutputType> {
     public let errorObserver: Observer<NSError, NoError>
     
     /// Responds to the `refreshObserver`, chaining to a new `loadingProducerWithInput(_:)`. `Next` events are forwarded to the `contentChangesSignal` whilst errors are flattened out and forwarded to the `errorSignal`.
-    public let refreshSignal: SignalProducer<InputType?, NoError>
+    public let refreshSignal: Signal<InputType?, NoError>
     
     /// Assigned on `.Next` events of the `loadingProducerWithInput()`.
     public var loadedContent:OutputType?
@@ -75,9 +75,12 @@ public class ContentLoadingViewModel<InputType, OutputType> {
      - parameter refreshFlattenStrategy: The `FlattenStrategy` applied to the `SignalProducer` returned from `loadingProducerWithInput(_:)`.
      
      */
-    public init(lifetimeTrigger:ViewLifetime? = .WillAppear, refreshFlattenStrategy:FlattenStrategy = .Latest) {
+    public init(lifetimeTrigger:ViewLifetime? = .WillAppear, refreshFlattenStrategy:FlattenStrategy = .latest) {
         
-        let (refreshSignal, refreshObserver) = SignalProducer<InputType?, NoError>.buffer(2)
+        let (refreshSignal, refreshObserver) = Signal<InputType?, NoError>.pipe()
+        let replayedProducer = SignalProducer(signal: refreshSignal).replayLazily(upTo: 2)
+        replayedProducer.start()
+        
         self.refreshSignal = refreshSignal
         self.refreshObserver = refreshObserver
         
@@ -96,28 +99,28 @@ public class ContentLoadingViewModel<InputType, OutputType> {
                 }.map { _ in nil }
                 .start(refreshObserver)
         }
-        
-        refreshSignal
-            .flatMap(refreshFlattenStrategy) { (input) -> SignalProducer<OutputType, NoError> in
-                
-                let p = self.loadingProducerWithInput(input)
-                    .on(started: { self.isLoading.value = true }, terminated: { self.isLoading.value = false })
-                    .flatMapError({ (error) -> SignalProducer<OutputType, NoError> in
-                        self.errorObserver.sendNext(error)
-                        return SignalProducer.empty
-                    })
-                
-                return p
-            }
-            .observeOn(UIScheduler())
-            .startWithNext { [weak self] (nextValue) in
+
+        _ = refreshSignal.flatMap(refreshFlattenStrategy) { (input) -> SignalProducer<OutputType, NoError> in
+            
+            let p = self.loadingProducerWithInput(input: input)
+                .on(started: { self.isLoading.value = true }, terminated: { self.isLoading.value = false })
+                .flatMapError({ (error) -> SignalProducer<OutputType, NoError> in
+                    self.errorObserver.send(value: error)
+                    return SignalProducer.empty
+                })
+            
+            return p
+        }
+        _ = refreshSignal.observe(on: UIScheduler())
+/*
+        _ = refreshSignal.startWithNext { [weak self] (nextValue) in
                 self?.loadedContent = nextValue
                 if let obs = self?.contentChangesObserver {
                     obs.sendNext(nextValue)
                 }
         }
         
-        // merge the content change signals into a single signal for ContentLoadingState 
+        // merge the content change signals into a single signal for ContentLoadingState
         
         let successStateSignal = contentChangesSignal
             .map { ContentLoadingState<OutputType>.Success($0) }
@@ -143,6 +146,7 @@ public class ContentLoadingViewModel<InputType, OutputType> {
         stateObserver.sendCompleted()
         
         state <~ stateSignal.flatten(.Merge)
+*/
     }
     
     // MARK: Content Loading

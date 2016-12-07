@@ -20,7 +20,7 @@ public protocol AnalyticSession {
 public protocol AnalyticsReporter {
     
     /// Should enable / disable further analytics from be sent.
-    func enableAnalytics(enable:Bool)
+    func enableAnalytics(_ enable:Bool)
     
     /// Should be called before any other analytics methods to set the default properties, such as tracking ids.
     func setupAnalytics()
@@ -32,7 +32,7 @@ public protocol AnalyticsReporter {
     - parameter event: The event to send.
     - parameter session: If this value is not nil, this should begin a new analytics session with the given configuration, closing a previously opened session. This should be called whenever anyhting in the session configuration changes, e.g. user logs out / in.
     */
-    func sendAnalytic(event:AnalyticEvent, asNewSession session:AnalyticSession?)
+    func sendAnalytic(_ event:AnalyticEvent, asNewSession session:AnalyticSession?)
     
     /**
     
@@ -40,13 +40,13 @@ public protocol AnalyticsReporter {
     
     - parameter event: The event to send.
     */
-    func sendAnalytic(event:AnalyticEvent)
+    func sendAnalytic(_ event:AnalyticEvent)
 }
 
 public extension AnalyticsReporter {
     
     /// Calls `sendAnalytic(_:asNewSession:)` without starting a new session.
-    public func sendAnalytic(event:AnalyticEvent){
+    public func sendAnalytic(_ event:AnalyticEvent){
         sendAnalytic(event, asNewSession: nil)
     }
     

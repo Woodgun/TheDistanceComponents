@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21A4692C787B0EC553F48395 /* Pods_TDCContentLoading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21966CCA64F69FD7A8F92EB /* Pods_TDCContentLoading.framework */; };
+		38CB5DDF0F3807C8B4559B4D /* Pods_TDCAppDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2FCCAFE638B3FAFA4DBBA3 /* Pods_TDCAppDependencies.framework */; };
 		A54167461CF3A236002F4BA8 /* TestContentLoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54167451CF3A236002F4BA8 /* TestContentLoadingModel.swift */; };
-		A54167471CF3A264002F4BA8 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501B521CF3652700022D04 /* ReactiveCocoa.framework */; };
-		A54167481CF3A264002F4BA8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501B531CF3652700022D04 /* Result.framework */; };
-		A541674A1CF3A286002F4BA8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54167491CF3A286002F4BA8 /* Nimble.framework */; };
 		A5501AD81CF361F100022D04 /* TDCAppDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501ACE1CF361F100022D04 /* TDCAppDependencies.framework */; };
 		A5501ADD1CF361F100022D04 /* TDCAppDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501ADC1CF361F100022D04 /* TDCAppDependenciesTests.swift */; };
 		A5501AF41CF361FD00022D04 /* TDCContentLoading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501AEA1CF361FD00022D04 /* TDCContentLoading.framework */; };
@@ -33,8 +32,6 @@
 		A5501B4E1CF362DE00022D04 /* PagedContentLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501B481CF362DE00022D04 /* PagedContentLoadingViewModel.swift */; };
 		A5501B4F1CF3634400022D04 /* TDCAppDependencies.h in Headers */ = {isa = PBXBuildFile; fileRef = A5501AD01CF361F100022D04 /* TDCAppDependencies.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5501B511CF3640600022D04 /* ViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501B501CF3640600022D04 /* ViewLoader.swift */; };
-		A5501B571CF3657000022D04 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501B521CF3652700022D04 /* ReactiveCocoa.framework */; };
-		A5501B581CF3657000022D04 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5501B531CF3652700022D04 /* Result.framework */; };
 		A5501B5A1CF4458100022D04 /* ListLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501B591CF4458100022D04 /* ListLoadingViewModel.swift */; };
 		A5501B631CF44FFA00022D04 /* Array+Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501B601CF44FFA00022D04 /* Array+Changeset.swift */; };
 		A5501B641CF44FFA00022D04 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501B611CF44FFA00022D04 /* Changeset.swift */; };
@@ -60,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11A59081F18C67E5F72BCA71 /* Pods-TDCContentLoading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDCContentLoading.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDCContentLoading/Pods-TDCContentLoading.release.xcconfig"; sourceTree = "<group>"; };
+		5A471BC41DF835F200044362 /* Pods_TDCContentLoading.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TDCContentLoading.framework; path = "../../Library/Developer/Xcode/DerivedData/TheDistanceComponents-cepijioqczlbryddybqjcvllcret/Build/Products/Debug-iphonesimulator/Pods_TDCContentLoading.framework"; sourceTree = "<group>"; };
+		5C2FCCAFE638B3FAFA4DBBA3 /* Pods_TDCAppDependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDCAppDependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AFFFDE9D96A38973A89044 /* Pods-TDCContentLoading.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDCContentLoading.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDCContentLoading/Pods-TDCContentLoading.debug.xcconfig"; sourceTree = "<group>"; };
+		9B11E7AAD6CCFD745A517CE0 /* Pods-TDCAppDependencies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDCAppDependencies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDCAppDependencies/Pods-TDCAppDependencies.debug.xcconfig"; sourceTree = "<group>"; };
 		A54167451CF3A236002F4BA8 /* TestContentLoadingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContentLoadingModel.swift; sourceTree = "<group>"; };
 		A54167491CF3A286002F4BA8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		A5501ACE1CF361F100022D04 /* TDCAppDependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDCAppDependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,8 @@
 		A5501B611CF44FFA00022D04 /* Changeset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changeset.swift; sourceTree = "<group>"; };
 		A5501B621CF44FFA00022D04 /* PagedOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedOutput.swift; sourceTree = "<group>"; };
 		A5501B661CF4500900022D04 /* ContentLoadingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentLoadingState.swift; sourceTree = "<group>"; };
+		F1C5E8FAEB71F8ED06EBC15B /* Pods-TDCAppDependencies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDCAppDependencies.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDCAppDependencies/Pods-TDCAppDependencies.release.xcconfig"; sourceTree = "<group>"; };
+		F21966CCA64F69FD7A8F92EB /* Pods_TDCContentLoading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDCContentLoading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CB5DDF0F3807C8B4559B4D /* Pods_TDCAppDependencies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5501B571CF3657000022D04 /* ReactiveCocoa.framework in Frameworks */,
-				A5501B581CF3657000022D04 /* Result.framework in Frameworks */,
+				21A4692C787B0EC553F48395 /* Pods_TDCContentLoading.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,15 +134,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5501AF41CF361FD00022D04 /* TDCContentLoading.framework in Frameworks */,
-				A54167471CF3A264002F4BA8 /* ReactiveCocoa.framework in Frameworks */,
-				A54167481CF3A264002F4BA8 /* Result.framework in Frameworks */,
-				A541674A1CF3A286002F4BA8 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0AFC2F76FDA948D0321A34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B11E7AAD6CCFD745A517CE0 /* Pods-TDCAppDependencies.debug.xcconfig */,
+				F1C5E8FAEB71F8ED06EBC15B /* Pods-TDCAppDependencies.release.xcconfig */,
+				79AFFFDE9D96A38973A89044 /* Pods-TDCContentLoading.debug.xcconfig */,
+				11A59081F18C67E5F72BCA71 /* Pods-TDCContentLoading.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A5501A7B1CF35F7700022D04 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +160,7 @@
 				A5501AEB1CF361FD00022D04 /* TDCContentLoading */,
 				A5501AF71CF361FD00022D04 /* TDCContentLoadingTests */,
 				A5501A861CF35F7700022D04 /* Products */,
+				1F0AFC2F76FDA948D0321A34 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,9 +266,12 @@
 		A5501B561CF3652B00022D04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A471BC41DF835F200044362 /* Pods_TDCContentLoading.framework */,
 				A54167491CF3A286002F4BA8 /* Nimble.framework */,
 				A5501B521CF3652700022D04 /* ReactiveCocoa.framework */,
 				A5501B531CF3652700022D04 /* Result.framework */,
+				5C2FCCAFE638B3FAFA4DBBA3 /* Pods_TDCAppDependencies.framework */,
+				F21966CCA64F69FD7A8F92EB /* Pods_TDCContentLoading.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,10 +313,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5501ADF1CF361F100022D04 /* Build configuration list for PBXNativeTarget "TDCAppDependencies" */;
 			buildPhases = (
+				7F3FDE908F7E7C9AF74CE3E7 /* [CP] Check Pods Manifest.lock */,
 				A5501AC91CF361F100022D04 /* Sources */,
 				A5501ACA1CF361F100022D04 /* Frameworks */,
 				A5501ACB1CF361F100022D04 /* Headers */,
 				A5501ACC1CF361F100022D04 /* Resources */,
+				354BBFD23971581741E0FCA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,10 +351,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5501AFB1CF361FD00022D04 /* Build configuration list for PBXNativeTarget "TDCContentLoading" */;
 			buildPhases = (
+				B9752D034F4CCF2055A70984 /* [CP] Check Pods Manifest.lock */,
 				A5501AE51CF361FD00022D04 /* Sources */,
 				A5501AE61CF361FD00022D04 /* Frameworks */,
 				A5501AE71CF361FD00022D04 /* Headers */,
 				A5501AE81CF361FD00022D04 /* Resources */,
+				E556C10A4EB07CE50A1BFB6F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -373,16 +393,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "The Distance";
 				TargetAttributes = {
 					A5501ACD1CF361F100022D04 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					A5501AD61CF361F100022D04 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					A5501AE91CF361FD00022D04 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -446,6 +466,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		354BBFD23971581741E0FCA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDCAppDependencies/Pods-TDCAppDependencies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F3FDE908F7E7C9AF74CE3E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		A541674B1CF3A7A2002F4BA8 /* Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +512,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		B9752D034F4CCF2055A70984 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E556C10A4EB07CE50A1BFB6F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDCContentLoading/Pods-TDCContentLoading-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -548,8 +628,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -577,6 +659,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -597,8 +680,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -618,6 +703,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -627,15 +714,14 @@
 		};
 		A5501AE01CF361F100022D04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B11E7AAD6CCFD745A517CE0 /* Pods-TDCAppDependencies.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TDCAppDependencies/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -643,21 +729,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCAppDependencies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
 		A5501AE11CF361F100022D04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1C5E8FAEB71F8ED06EBC15B /* Pods-TDCAppDependencies.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TDCAppDependencies/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -665,7 +750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCAppDependencies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
@@ -676,7 +761,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCAppDependenciesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -687,22 +772,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCAppDependenciesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
 		A5501AFC1CF361FD00022D04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79AFFFDE9D96A38973A89044 /* Pods-TDCContentLoading.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TDCContentLoading/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -711,22 +795,21 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
 		A5501AFD1CF361FD00022D04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11A59081F18C67E5F72BCA71 /* Pods-TDCContentLoading.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TDCContentLoading/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -734,37 +817,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCContentLoading;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
 		A5501AFF1CF361FD00022D04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TDCContentLoadingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCContentLoadingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
 		A5501B001CF361FD00022D04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TDCContentLoadingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.TDCContentLoadingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 
 /// Convenience subclass of `ContentLoadingViewModel` for `OutputType`s that conform to `ListLoadingModel`. This allows this class itself to conform to `ListLoadingModel`.
 public class ListLoadingViewModel<InputType, ListType:ListLoadingModel>: ContentLoadingViewModel<InputType, ListType>, ListLoadingModel {
@@ -40,12 +40,12 @@ public class ListLoadingViewModel<InputType, ListType:ListLoadingModel>: Content
     
     /// - returns: The number of objects in a given section from `loadedContent` or zero if `loadedContent` is `nil`.
     public func numberOfEntitiesInSection(section:Int) -> Int {
-        return loadedContent?.numberOfEntitiesInSection(section) ?? 0
+        return loadedContent?.numberOfEntitiesInSection(section: section) ?? 0
     }
     
     /// - returns: The specific object for a given `NSIndexPath` from `loadedContent`.
     public func entityForIndexPath(indexPath:NSIndexPath) -> ListType.ValueType? {
-        return loadedContent?.entityForIndexPath(indexPath)
+        return loadedContent?.entityForIndexPath(indexPath: indexPath)
     }
     
     

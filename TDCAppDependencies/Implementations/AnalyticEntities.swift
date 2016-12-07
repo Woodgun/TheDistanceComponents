@@ -19,7 +19,7 @@ public struct AnalyticEvent: CustomStringConvertible, Equatable {
     public let label:String?
     
     /// Internal variable used to highlight the mutability implications of the addInfo(_:value:) and setUserInfo(_:) methods.
-    private var _userInfo = [String:Any]()
+    fileprivate var _userInfo = [String:Any]()
     
     /// Extra info specifc to this analytic event.
     public var userInfo:[String:Any] {
@@ -56,7 +56,7 @@ public struct AnalyticEvent: CustomStringConvertible, Equatable {
     - parameter key: The key to which the value will be assigned.
     - parameter value: The value to be stored.
     */
-    public mutating func addInfo(key:String, value:Any) {
+    public mutating func addInfo(_ key:String, value:Any) {
         _userInfo[key] = value
     }
     
@@ -67,7 +67,7 @@ public struct AnalyticEvent: CustomStringConvertible, Equatable {
     - parameter info: The info to be set.
     
     */
-    public mutating func setUserInfo(info:[String:Any]) {
+    public mutating func setUserInfo(_ info:[String:Any]) {
         _userInfo = info
     }
     

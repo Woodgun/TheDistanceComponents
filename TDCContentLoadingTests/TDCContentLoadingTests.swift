@@ -8,7 +8,7 @@
 
 import XCTest
 
-import ReactiveCocoa
+import ReactiveSwift
 import Result
 
 import Nimble

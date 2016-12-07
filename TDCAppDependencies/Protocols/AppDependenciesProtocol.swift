@@ -30,5 +30,5 @@ public protocol _AppDependencies {
      
      - parameter window: The window to add the root `UIViewController` to.
     */
-    func installRootViewControllerIntoWindow(window:UIWindow)
+    func installRootViewControllerIntoWindow(_ window:UIWindow)
 }

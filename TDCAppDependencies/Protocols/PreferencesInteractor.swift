@@ -37,17 +37,17 @@ public extension PreferencesInteractor {
     */
     public func setDefaultPreferences() {
         let prefs = [EnableCrashReportingPreferenceKey: true, EnableAnalyticsPreferenceKey: true]
-        NSUserDefaults.standardUserDefaults().registerDefaults(prefs)
+        UserDefaults.standard.register(defaults: prefs)
     }
     
     /// Queries settings bundle with `EnableAnalyticsPreferenceKey`.
     public func canSendAnalytics() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(EnableAnalyticsPreferenceKey)
+        return UserDefaults.standard.bool(forKey: EnableAnalyticsPreferenceKey)
     }
     
     /// Queries settings bundle with `EnableCrashReportingPreferenceKey`.
     public func canSendCrashReports() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(EnableCrashReportingPreferenceKey)
+        return UserDefaults.standard.bool(forKey: EnableCrashReportingPreferenceKey)
     }
     
 }

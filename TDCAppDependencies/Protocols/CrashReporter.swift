@@ -22,7 +22,7 @@ public protocol CrashReporter {
      - parameter message: The message to be appended to the crash report.
      
     */
-    func logToCrashReport(message:String)
+    func logToCrashReport(_ message:String)
     
     /**
      
@@ -30,6 +30,6 @@ public protocol CrashReporter {
      
      - parameter error: The error to report.
     */
-    func logNonFatalError(error: NSError)
+    func logNonFatalError(_ error: NSError)
     
 }

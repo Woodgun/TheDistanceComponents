@@ -20,7 +20,7 @@ public protocol ContentEquatable: Equatable {
      - parameter other: The object to compare content against.
      - returns: `true` if the content of `other` is the same as the content of `self`, `false` otherwise.
     */
-    @warn_unused_result
+    
     func contentMatches(other:Self) -> Bool
 }
 
@@ -55,26 +55,26 @@ public struct Changeset<Element: ContentEquatable> {
         self.oldItems = oldItems
         self.newItems = newItems
         
-        deletions = oldItems.difference(newItems).map { item in
-            return Changeset.indexPathForIndex(oldItems.indexOf(item)!)
+        deletions = oldItems.difference(otherArray: newItems).map { item in
+            return Changeset.indexPathForIndex(index: oldItems.index(of: item)!)
         }
         
-        modifications = oldItems.intersection(newItems)
+        modifications = oldItems.intersection(otherArray: newItems)
             .filter({ item in
-                let newItem = newItems[newItems.indexOf(item)!]
-                return item.contentMatches(newItem)
+                let newItem = newItems[newItems.index(of: item)!]
+                return item.contentMatches(other: newItem)
             })
             .map({ item in
-                return Changeset.indexPathForIndex(oldItems.indexOf(item)!)
+                return Changeset.indexPathForIndex(index: oldItems.index(of: item)!)
             })
         
-        insertions = newItems.difference(oldItems).map { item in
-            return NSIndexPath(forRow: newItems.indexOf(item)!, inSection: 0)
+        insertions = newItems.difference(otherArray: oldItems).map { item in
+            return NSIndexPath(row: newItems.index(of: item)!, section: 0)
         }
     }
     
     private static func indexPathForIndex(index: Int) -> NSIndexPath {
-        return NSIndexPath(forRow: index, inSection: 0)
+        return NSIndexPath(row: index, section: 0)
     }
 }
 
@@ -99,12 +99,12 @@ extension Changeset: ChangesetLoadingModel {
     
     /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
     public func numberOfEntitiesInSection(section:Int) -> Int {
-        return newItems.numberOfEntitiesInSection(section)
+        return newItems.numberOfEntitiesInSection(section: section)
     }
     
     /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
     public func entityForIndexPath(indexPath:NSIndexPath) -> ValueType? {
-        return newItems.entityForIndexPath(indexPath)
+        return newItems.entityForIndexPath(indexPath: indexPath)
     }
     
     /// - returns: The `newItems` as this represents the current content of this change.

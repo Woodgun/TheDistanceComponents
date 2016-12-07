@@ -40,7 +40,7 @@ extension PagedOutput: ChangesetLoadingModel {
     
     /// - returns: The number of objects in section 0. Paging sections is not yet implemented.
     public func totalNumberOfEntities() -> Int {
-        return numberOfEntitiesInSection(0)
+        return numberOfEntitiesInSection(section: 0)
     }
     
     /// - returns: The specific object for a given `NSIndexPath` from `currentContent`, or `nil` if the `indexPath.row` is above the count of objects in `currentContent`, this occurs if there is more content available.
