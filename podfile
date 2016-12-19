@@ -13,7 +13,6 @@ project 'TheDistanceComponents'
 # define groups of pods
 
 def core_pods
-	pod 'Nimble'
 	pod 'ReactiveSwift', '~> 1.0.0-alpha.4'
 end
 
@@ -31,5 +30,23 @@ target 'TDCContentLoading' do
     core_pods
     
 end
+
+target 'TDCAppDependenciesTests' do
+
+    core_pods
+	pod 'Nimble'	
+    
+end
+
+target 'TDCContentLoadingTests' do
+
+    core_pods
+	pod 'Nimble'	
+    
+end
+
+
+
+
 
 

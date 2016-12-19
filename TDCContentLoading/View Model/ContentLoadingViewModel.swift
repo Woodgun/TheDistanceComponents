@@ -78,7 +78,7 @@ public class ContentLoadingViewModel<InputType, OutputType> {
     public init(lifetimeTrigger:ViewLifetime? = .WillAppear, refreshFlattenStrategy:FlattenStrategy = .latest) {
         
         let (refreshSignal, refreshObserver) = Signal<InputType?, NoError>.pipe()
-        let replayedProducer = SignalProducer(signal: refreshSignal).replayLazily(upTo: 2)
+        let replayedProducer = SignalProducer(refreshSignal).replayLazily(upTo: 2)
         replayedProducer.start()
         
         self.refreshSignal = refreshSignal
