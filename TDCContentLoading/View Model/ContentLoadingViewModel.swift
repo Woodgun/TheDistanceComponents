@@ -24,7 +24,7 @@ import Result
  - seealso: `CollectionLoadingNode`
  
  */
-public class ContentLoadingViewModel<InputType, OutputType> {
+open class ContentLoadingViewModel<InputType, OutputType> {
     
     // MARK: Input
     

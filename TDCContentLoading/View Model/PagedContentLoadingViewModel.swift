@@ -15,7 +15,7 @@ import ReactiveSwift
  
  `InputType` is a `Bool` indicating whether the next page of content should be fetched (`true`), or whether the currently loaded content should be cleared and the first page of content requested again (`false`).
 */
-public class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool, PagedOutput<ValueType>>, ChangesetLoadingModel {
+open class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool, PagedOutput<ValueType>>, ChangesetLoadingModel {
     
     /// The number of objects that should be fetched per page. The default value is 25. Changing the value of this causes a refresh of the content as the current page number will be incorrect.
     public let pageCount = MutableProperty<UInt>(25)

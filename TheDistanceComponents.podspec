@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TheDistanceComponents"
-  s.version      = "0.4"
+  s.version      = "0.5"
   s.summary      = "Building Blocks for Great iOS Apps from The Distance."
   s.homepage     = "https://github.com/thedistance"
   s.license      = "MIT"

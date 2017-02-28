@@ -10,7 +10,7 @@ import Foundation
 import ReactiveSwift
 
 /// Convenience subclass of `ContentLoadingViewModel` for `OutputType`s that conform to `ListLoadingModel`. This allows this class itself to conform to `ListLoadingModel`.
-public class ListLoadingViewModel<InputType, ListType:ListLoadingModel>: ContentLoadingViewModel<InputType, ListType>, ListLoadingModel {
+open class ListLoadingViewModel<InputType, ListType:ListLoadingModel>: ContentLoadingViewModel<InputType, ListType>, ListLoadingModel {
     
     public override init(lifetimeTrigger: ViewLifetime?, refreshFlattenStrategy: FlattenStrategy) {
         super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
