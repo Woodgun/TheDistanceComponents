@@ -111,7 +111,7 @@ extension Array: ChangesetLoadingModel {
      
      - returns: The item at index `indexPath.item`.
      */
-    public func entityForIndexPath(indexPath:NSIndexPath) -> ValueType? {
+    public func entityForIndexPath(indexPath: IndexPath) -> ValueType? {
         return self[indexPath.item]
     }
     

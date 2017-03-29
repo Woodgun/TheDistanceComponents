@@ -37,7 +37,7 @@ public protocol ListLoadingModel {
     func numberOfEntitiesInSection(section:Int) -> Int
     
     /// - returns: The specfic entity for a given index path.
-    func entityForIndexPath(indexPath:NSIndexPath) -> ValueType?
+    func entityForIndexPath(indexPath: IndexPath) -> ValueType?
 }
 
 /**

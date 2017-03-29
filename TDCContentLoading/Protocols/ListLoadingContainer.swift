@@ -15,7 +15,7 @@ public protocol ListLoadingContainer:ListLoadingModel {
     associatedtype ModelType:ListLoadingModel
     
     /// The reference to the `ListLoadingModel`.
-    var listLoadingModel:ModelType { get }
+    var listLoadingModel: ModelType { get }
 }
 
 public extension ListLoadingContainer {
@@ -39,7 +39,9 @@ public extension ListLoadingContainer {
     }
     
     /// - returns: `entityForIndexPath(_:)` as given by the contained `ListLoadingModel`.
-    public func entityForIndexPath(indexPath: NSIndexPath) -> ModelType.ValueType? {
-        return listLoadingModel.entityForIndexPath(indexPath: indexPath)
-    }
+    
+
+//    public func entityForIndexPath(indexPath: IndexPath) -> ModelType.ValueType? {
+//        return listLoadingModel.entityForIndexPath(indexPath: indexPath)
+//    }
 }

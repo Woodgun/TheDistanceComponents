@@ -34,13 +34,13 @@ public protocol ContentEquatable: Equatable {
 public struct Changeset<Element: ContentEquatable> {
     
     /// Index Paths for the items in `oldItems` that are no longer in `newItems`. Inclusion is determined by `Equatable`.
-    public var deletions: [NSIndexPath]
+    public var deletions: [IndexPath]
     
     /// Index Paths for the items in both `oldItems` and `newItems`. Inclusion is determined by `Equatable`. Modification is determined by `ContentEquatable`.
-    public var modifications: [NSIndexPath]
+    public var modifications: [IndexPath]
     
     /// Index Paths for the items in `newItems` that were not in `oldItems`. Inclusion is determined by `Equatable`.
-    public var insertions: [NSIndexPath]
+    public var insertions: [IndexPath]
     
     /// The initial array to perform comparison of `newItems` to.
     public var oldItems:[Element]
@@ -69,12 +69,12 @@ public struct Changeset<Element: ContentEquatable> {
             })
         
         insertions = newItems.difference(otherArray: oldItems).map { item in
-            return NSIndexPath(row: newItems.index(of: item)!, section: 0)
+            return IndexPath(row: newItems.index(of: item)!, section: 0)
         }
     }
     
-    private static func indexPathForIndex(index: Int) -> NSIndexPath {
-        return NSIndexPath(row: index, section: 0)
+    private static func indexPathForIndex(index: Int) -> IndexPath {
+        return IndexPath(row: index, section: 0)
     }
 }
 
@@ -103,7 +103,7 @@ extension Changeset: ChangesetLoadingModel {
     }
     
     /// `ListLoadingModel` conformance using `newItems` as an Array conforming to `ListLoadingModel`.
-    public func entityForIndexPath(indexPath:NSIndexPath) -> ValueType? {
+    public func entityForIndexPath(indexPath: IndexPath) -> ValueType? {
         return newItems.entityForIndexPath(indexPath: indexPath)
     }
     

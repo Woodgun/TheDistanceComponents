@@ -27,6 +27,7 @@ public struct PagedOutput<OutputType> {
 // MARK: List Loading Model
 
 extension PagedOutput: ChangesetLoadingModel {
+    public typealias ValueType = OutputType
     
     /// - returns: 1. Paging sections is not yet implemented.
     public func numberOfSectionsInList() -> Int {
@@ -44,7 +45,7 @@ extension PagedOutput: ChangesetLoadingModel {
     }
     
     /// - returns: The specific object for a given `NSIndexPath` from `currentContent`, or `nil` if the `indexPath.row` is above the count of objects in `currentContent`, this occurs if there is more content available.
-    public func entityForIndexPath(indexPath: NSIndexPath) -> OutputType? {
+    public func entityForIndexPath(indexPath: IndexPath) -> OutputType? {
         
         if indexPath.row >= currentContent.count {
             return nil

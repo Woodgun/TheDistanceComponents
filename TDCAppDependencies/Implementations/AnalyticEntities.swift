@@ -74,7 +74,7 @@ public struct AnalyticEvent: CustomStringConvertible, Equatable {
     /// `CustomStringConvertible` variable.
     public var description:String {
         get {
-            return "<Analytic: \(category) - \(action) - \(label), UserInfo: \(userInfo)>"
+            return "<Analytic: \(category) - \(action) - \(String(describing: label)), UserInfo: \(userInfo)>"
         }
     }
 }

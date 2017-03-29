@@ -44,7 +44,7 @@ open class ListLoadingViewModel<InputType, ListType:ListLoadingModel>: ContentLo
     }
     
     /// - returns: The specific object for a given `NSIndexPath` from `loadedContent`.
-    public func entityForIndexPath(indexPath:NSIndexPath) -> ListType.ValueType? {
+    public func entityForIndexPath(indexPath: IndexPath) -> ListType.ValueType? {
         return loadedContent?.entityForIndexPath(indexPath: indexPath)
     }
     
