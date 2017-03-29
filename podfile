@@ -13,7 +13,7 @@ project 'TheDistanceComponents'
 # define groups of pods
 
 def core_pods
-	pod 'ReactiveSwift', '~> 1.0.0-alpha.4'
+	pod 'ReactiveSwift'
 end
 
 

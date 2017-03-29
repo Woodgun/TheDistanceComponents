@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TheDistanceComponents"
-  s.version      = "0.5"
+  s.version      = "0.6"
   s.summary      = "Building Blocks for Great iOS Apps from The Distance."
   s.homepage     = "https://github.com/thedistance"
   s.license      = "MIT"
@@ -19,12 +19,12 @@ Pod::Spec.new do |s|
   
   s.subspec 'TDCContentLoading' do |cont|
     cont.source_files = 'TDCContentLoading/**/*.swift'
-    cont.dependency 'ReactiveSwift', '~> 1.0.0-alpha.4'
+    cont.dependency 'ReactiveSwift'
   end  
   
   s.subspec 'TDCAppDependencies' do |app|
     app.source_files = 'TDCAppDependencies/**/*.{h,m,swift}'
-    app.dependency 'ReactiveSwift', '~> 1.0.0-alpha.4'
+    app.dependency 'ReactiveSwift'
   end  
 
 end
