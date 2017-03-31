@@ -12,7 +12,7 @@ import Result
 
 /// Enum sent from a `ReactiveAppearanceViewController` on view lifetime methods. This allows listening to when appearance events occur to allow for deep linking.
 public enum ViewLifetime {
-
+    
     /// Sent from `init(coder:)` and `init(nibNameOrNil:bundle:)`.
     case Init
     
@@ -33,7 +33,7 @@ public enum ViewLifetime {
 }
 
 /// `UIViewController` subclass for that sends its lifecycle events (`viewDidLoad()`, `viewWillAppear(_:)` etc.) via a Signal.
-public class ReactiveAppearanceViewController: UIViewController {
+open class ReactiveAppearanceViewController: UIViewController {
     
     /// Signal and Observer pair that send view lifecycle events for each value of `ViewLifetime`.
     public let (lifetimeSignal, lifetimeObserver) = Signal<ViewLifetime, NoError>.pipe()
@@ -44,7 +44,7 @@ public class ReactiveAppearanceViewController: UIViewController {
         
         lifetimeObserver.send(value: .Init)
     }
-
+    
     /// Standard initialiser sending the `.Init` lifetime event to `lifetimeObserver`.
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -53,35 +53,35 @@ public class ReactiveAppearanceViewController: UIViewController {
     }
     
     /// Sends `.DidLoad` lifetime event to `lifetimeObserver`.
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         lifetimeObserver.send(value: .DidLoad)
     }
     
     /// Sends `.WillAppear` lifetime event to `lifetimeObserver`.
-    public override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         lifetimeObserver.send(value: .WillAppear)
     }
     
     /// Sends `.DidAppear` lifetime event to `lifetimeObserver`.
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         lifetimeObserver.send(value: .DidAppear)
     }
     
     /// Sends `.WillDisappear` lifetime event to `lifetimeObserver`.
-    public override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         lifetimeObserver.send(value: .WillDisappear)
     }
     
     /// Sends `.DidDisappear` lifetime event to `lifetimeObserver`.
-    public override func viewDidDisappear(_ animated: Bool) {
+    open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         lifetimeObserver.send(value: .DidDisappear)

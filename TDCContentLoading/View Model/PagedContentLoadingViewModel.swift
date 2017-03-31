@@ -32,7 +32,7 @@ open class PagingContentLoadingViewModel<ValueType>: ListLoadingViewModel<Bool, 
      Point of customisation for subclasses. The given page of content should be requested from an APIManager or other external source.
      
     */
-    public func contentForPage(page: UInt) -> SignalProducer<[ValueType], NSError> {
+    open func contentForPage(page: UInt) -> SignalProducer<[ValueType], NSError> {
         return SignalProducer.empty
     }
     
