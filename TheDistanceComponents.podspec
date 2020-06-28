@@ -19,12 +19,12 @@ Pod::Spec.new do |s|
   
   s.subspec 'TDCContentLoading' do |cont|
     cont.source_files = 'TDCContentLoading/**/*.swift'
-    cont.dependency 'ReactiveSwift'
+    cont.dependency 'ReactiveSwift', '~> 1.0.0-alpha.4'
   end  
   
   s.subspec 'TDCAppDependencies' do |app|
     app.source_files = 'TDCAppDependencies/**/*.{h,m,swift}'
-    app.dependency 'ReactiveSwift'
+    app.dependency 'ReactiveSwift', '~> 1.0.0-alpha.4'
   end  
 
 end
